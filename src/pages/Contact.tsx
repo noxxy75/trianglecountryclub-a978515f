@@ -41,7 +41,7 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 text-green-600" />
                   <div>
                     <h3 className="font-semibold">Address</h3>
-                    <p className="text-gray-600">123 Golf Club Road, Triangle City, TC 12345</p>
+                    <p className="text-gray-600">Ross Armstrong Way, Triangle, Zimbabwe</p>
                   </div>
                 </div>
               </CardContent>
