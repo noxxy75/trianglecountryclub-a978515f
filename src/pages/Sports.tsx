@@ -58,6 +58,48 @@ const Sports = () => {
         content: "Effective cardio workout plans for all fitness levels at our state-of-the-art facility.",
         image: "https://images.unsplash.com/photo-1518611012118-696072aa579a"
       }
+    ],
+    soccer: [
+      {
+        title: "Soccer Training Programs",
+        date: "March 19, 2024",
+        content: "Join our comprehensive soccer training programs suitable for all skill levels.",
+        image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55"
+      },
+      {
+        title: "Youth Soccer League",
+        date: "March 13, 2024",
+        content: "Information about our youth soccer league and upcoming tournaments.",
+        image: "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a"
+      }
+    ],
+    gym: [
+      {
+        title: "New Equipment Arrival",
+        date: "March 17, 2024",
+        content: "Check out our newly arrived state-of-the-art gym equipment for a better workout experience.",
+        image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+      },
+      {
+        title: "Personal Training Sessions",
+        date: "March 11, 2024",
+        content: "Book your personal training sessions with our certified trainers.",
+        image: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2"
+      }
+    ],
+    cricket: [
+      {
+        title: "Cricket Academy Launch",
+        date: "March 15, 2024",
+        content: "Join our new cricket academy with professional coaching staff.",
+        image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da"
+      },
+      {
+        title: "Weekend Cricket League",
+        date: "March 9, 2024",
+        content: "Participate in our weekend cricket league - open for all skill levels.",
+        image: "https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972"
+      }
     ]
   };
 
@@ -67,11 +109,14 @@ const Sports = () => {
         <h1 className="mb-12 text-center text-4xl font-bold text-white">Sports & Activities</h1>
 
         <Tabs defaultValue="golf" className="mx-auto max-w-5xl">
-          <TabsList className="grid w-full grid-cols-4 bg-gray-900">
+          <TabsList className="grid w-full grid-cols-7 bg-gray-900">
             <TabsTrigger value="golf" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Golf</TabsTrigger>
             <TabsTrigger value="tennis" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Tennis</TabsTrigger>
             <TabsTrigger value="swimming" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Swimming</TabsTrigger>
             <TabsTrigger value="fitness" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Fitness</TabsTrigger>
+            <TabsTrigger value="soccer" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Soccer</TabsTrigger>
+            <TabsTrigger value="gym" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Gym</TabsTrigger>
+            <TabsTrigger value="cricket" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Cricket</TabsTrigger>
           </TabsList>
 
           {Object.entries(sportBlogs).map(([sport, blogs]) => (
@@ -89,6 +134,9 @@ const Sports = () => {
                     {sport === "tennis" && "Our state-of-the-art tennis facilities include both indoor and outdoor courts."}
                     {sport === "swimming" && "Dive into our Olympic-sized pool or relax by the leisure pool."}
                     {sport === "fitness" && "Our modern fitness center features the latest equipment and personal training services."}
+                    {sport === "soccer" && "Join our soccer programs featuring professional coaching and well-maintained fields."}
+                    {sport === "gym" && "State-of-the-art equipment and expert trainers to help you achieve your fitness goals."}
+                    {sport === "cricket" && "Experience cricket on our professional grounds with top-notch practice facilities."}
                   </p>
 
                   <div className="mt-8">
