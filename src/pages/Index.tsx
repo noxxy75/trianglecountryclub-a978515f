@@ -7,8 +7,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
       {/* Hero Section */}
-      <div className="relative h-[600px] bg-[url('https://images.unsplash.com/photo-1472396961693-142e6e269027')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/40" />
+      <div className="relative h-[600px] bg-[url('https://images.unsplash.com/photo-1487958449943-2429e8be8625')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full items-center justify-center text-center">
           <div className="px-4">
             <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">Triangle Country Club</h1>
