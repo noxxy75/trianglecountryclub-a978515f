@@ -8,19 +8,19 @@ const Blog = () => {
       title: "Summer Golf Tournament 2024",
       date: "March 15, 2024",
       excerpt: "Join us for our annual summer golf tournament with amazing prizes and special guests.",
-      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+      image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b",
     },
     {
       title: "New Tennis Program Launch",
       date: "March 10, 2024",
       excerpt: "Introducing our new tennis program for juniors with professional coaching staff.",
-      image: "https://images.unsplash.com/photo-1452378174528-3090a4bba7b2",
+      image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0",
     },
     {
       title: "Fitness Center Upgrade",
       date: "March 5, 2024",
       excerpt: "Discover our newly renovated fitness center with state-of-the-art equipment.",
-      image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d",
+      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48",
     },
   ];
 
