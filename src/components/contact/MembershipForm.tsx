@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import { CreditCard, Loader2 } from "lucide-react";
 
 interface MembershipFormProps {
   onSubmit: (e: React.FormEvent) => void;
@@ -20,6 +21,7 @@ const membershipPrices = {
 
 const MembershipForm = ({ onSubmit }: MembershipFormProps) => {
   const [selectedType, setSelectedType] = useState<string>("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -32,7 +34,7 @@ const MembershipForm = ({ onSubmit }: MembershipFormProps) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedType) {
       toast({
@@ -42,7 +44,26 @@ const MembershipForm = ({ onSubmit }: MembershipFormProps) => {
       });
       return;
     }
-    onSubmit(e);
+
+    setIsSubmitting(true);
+    
+    // Simulate payment processing
+    try {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      toast({
+        title: "Payment Successful",
+        description: "Your membership application has been processed successfully.",
+      });
+      onSubmit(e);
+    } catch (error) {
+      toast({
+        title: "Payment Failed",
+        description: "There was an error processing your payment. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -78,11 +99,17 @@ const MembershipForm = ({ onSubmit }: MembershipFormProps) => {
             </select>
           </div>
           {selectedType && (
-            <div className="bg-muted p-4 rounded-lg">
-              <h4 className="font-medium mb-2">Cart Summary</h4>
+            <div className="bg-muted p-4 rounded-lg space-y-4">
+              <h4 className="font-medium">Cart Summary</h4>
               <div className="flex justify-between items-center">
                 <span>{selectedType.charAt(0).toUpperCase() + selectedType.slice(1)} Membership</span>
                 <span className="font-semibold">${membershipPrices[selectedType as keyof typeof membershipPrices]}/year</span>
+              </div>
+              <div className="border-t border-border pt-2">
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">Total</span>
+                  <span className="font-bold">${membershipPrices[selectedType as keyof typeof membershipPrices]}/year</span>
+                </div>
               </div>
             </div>
           )}
@@ -95,15 +122,31 @@ const MembershipForm = ({ onSubmit }: MembershipFormProps) => {
               required
             />
           </div>
-          <div className="flex items-center space-x-2">
-            <Checkbox id="terms" required />
-            <Label htmlFor="terms" className="text-sm">
-              I agree to the club's terms and conditions
-            </Label>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" required />
+              <Label htmlFor="terms" className="text-sm">
+                I agree to the club's terms and conditions
+              </Label>
+            </div>
+            <Button 
+              type="submit" 
+              className="w-full bg-primary hover:bg-primary/90"
+              disabled={isSubmitting || !selectedType}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Processing Payment...
+                </>
+              ) : (
+                <>
+                  <CreditCard className="mr-2 h-4 w-4" />
+                  Checkout - ${selectedType ? membershipPrices[selectedType as keyof typeof membershipPrices] : '0'}/year
+                </>
+              )}
+            </Button>
           </div>
-          <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-            Submit Application
-          </Button>
         </form>
       </CardContent>
     </Card>
