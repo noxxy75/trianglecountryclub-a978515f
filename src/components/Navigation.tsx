@@ -10,23 +10,23 @@ const Navigation = () => {
           <span className="text-lg font-medium text-foreground">Triangle Country Club</span>
         </Link>
         <div className="hidden space-x-8 md:flex">
-          <Link to="/" className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Home
           </Link>
-          <Link to="/about" className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             About
           </Link>
-          <Link to="/sports" className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/sports" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Sports
           </Link>
-          <Link to="/blog" className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Blog
           </Link>
-          <Link to="/contact" className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Contact
           </Link>
         </div>
-        <Button asChild className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-medium">
+        <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-medium">
           <Link to="/contact">Join Now</Link>
         </Button>
       </div>
