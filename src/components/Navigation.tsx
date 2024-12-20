@@ -15,6 +15,10 @@ const Navigation = () => {
       e.preventDefault();
     }
     setIsOpen(false);
+    // Scroll to top after a brief delay to ensure navigation has completed
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   };
 
   const navigationLinks = (className = "") => (
