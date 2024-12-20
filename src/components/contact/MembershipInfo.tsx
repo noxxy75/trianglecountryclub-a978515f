@@ -22,7 +22,7 @@ const MembershipInfo = () => {
           <h3 className="text-xl font-semibold mb-4">Membership Types</h3>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium">Individual - $299/year</h4>
+              <h4 className="font-medium">Individual - $60/year</h4>
               <p className="text-sm text-muted-foreground">Perfect for single players</p>
             </div>
             <div>
