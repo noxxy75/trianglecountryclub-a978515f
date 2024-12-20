@@ -53,7 +53,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-green-600" />
                   <div>
                     <h3 className="font-semibold">Phone</h3>
-                    <p className="text-gray-600">(555) 123-4567</p>
+                    <p className="text-gray-600">+263 774 045 150</p>
                   </div>
                 </div>
               </CardContent>
@@ -65,7 +65,10 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-green-600" />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-600">info@trianglecountryclub.com</p>
+                    <div className="space-y-1">
+                      <p className="text-gray-600">Bookings: book@t-cc.net</p>
+                      <p className="text-gray-600">Reception: reception@t-cc.net</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
