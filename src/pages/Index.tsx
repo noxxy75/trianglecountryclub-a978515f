@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { GolfBall, Calendar, Users, Trophy } from "lucide-react";
+import { Golf, Calendar, Users, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -26,7 +26,7 @@ const Index = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <GolfBall className="mb-4 h-10 w-10 text-green-600" />
+              <Golf className="mb-4 h-10 w-10 text-green-600" />
               <h3 className="mb-2 text-xl font-semibold">World-Class Golf</h3>
               <p className="text-center text-gray-600">Championship courses designed for all skill levels</p>
             </CardContent>
