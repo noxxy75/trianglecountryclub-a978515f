@@ -8,7 +8,37 @@ const Navigation = () => {
   const isMobile = useIsMobile();
 
   const navigationLinks = (className = "") => (
-    <div className={`flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 ${className}`}>
+    <div className={`flex flex-col items-center space-y-6 ${className}`}>
+      <div className="w-full border-b pb-4 text-center">
+        <span className="text-xl font-semibold">Menu</span>
+      </div>
+      <Link to="/" className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+        Home
+      </Link>
+      <Link to="/about" className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+        About
+      </Link>
+      <Link to="/sports" className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+        Sports
+      </Link>
+      <Link to="/blog" className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+        Blog
+      </Link>
+      <Link to="/contact" className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+        Contact
+      </Link>
+      <div className="w-full pt-4 border-t">
+        <Link to="/contact?tab=membership" className="block">
+          <Button variant="default" size="lg" className="w-full">
+            Join Now
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+
+  const desktopLinks = () => (
+    <div className="hidden md:flex items-center space-x-8">
       <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
         Home
       </Link>
@@ -48,15 +78,13 @@ const Navigation = () => {
               </Button>
             </DrawerTrigger>
             <DrawerContent>
-              <div className="p-6">
+              <div className="p-8">
                 {navigationLinks("pt-4")}
               </div>
             </DrawerContent>
           </Drawer>
         ) : (
-          <div className="hidden md:block">
-            {navigationLinks()}
-          </div>
+          desktopLinks()
         )}
       </div>
     </nav>
