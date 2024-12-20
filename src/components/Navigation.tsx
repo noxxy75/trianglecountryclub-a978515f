@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useState } from "react";
 
 const Navigation = () => {
   const isMobile = useIsMobile();
