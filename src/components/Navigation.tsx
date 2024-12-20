@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
 
 const Navigation = () => {
   return (
@@ -26,9 +25,6 @@ const Navigation = () => {
             Contact
           </Link>
         </div>
-        <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-medium">
-          <Link to="/contact">Join Now</Link>
-        </Button>
       </div>
     </nav>
   );
