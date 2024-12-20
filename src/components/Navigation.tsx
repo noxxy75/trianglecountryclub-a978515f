@@ -6,29 +6,50 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navigation = () => {
   const isMobile = useIsMobile();
+  const [isOpen, setIsOpen] = useState(false);
 
   const navigationLinks = (className = "") => (
     <div className={`flex flex-col items-center space-y-6 ${className}`}>
       <div className="w-full border-b pb-4 text-center">
         <span className="text-xl font-semibold">Menu</span>
       </div>
-      <Link to="/" className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/" 
+        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        onClick={() => setIsOpen(false)}
+      >
         Home
       </Link>
-      <Link to="/about" className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/about" 
+        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        onClick={() => setIsOpen(false)}
+      >
         About
       </Link>
-      <Link to="/sports" className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/sports" 
+        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        onClick={() => setIsOpen(false)}
+      >
         Sports
       </Link>
-      <Link to="/blog" className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/blog" 
+        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        onClick={() => setIsOpen(false)}
+      >
         Blog
       </Link>
-      <Link to="/contact" className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/contact" 
+        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        onClick={() => setIsOpen(false)}
+      >
         Contact
       </Link>
       <div className="w-full pt-4 border-t">
-        <Link to="/contact?tab=membership" className="block">
+        <Link to="/contact?tab=membership" className="block" onClick={() => setIsOpen(false)}>
           <Button variant="default" size="lg" className="w-full">
             Join Now
           </Button>
@@ -71,7 +92,7 @@ const Navigation = () => {
         </Link>
         
         {isMobile ? (
-          <Drawer>
+          <Drawer open={isOpen} onOpenChange={setIsOpen}>
             <DrawerTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
