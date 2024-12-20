@@ -9,6 +9,14 @@ const Navigation = () => {
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleLinkClick = (e: React.MouseEvent) => {
+    // Prevent default behavior only if it's a menu toggle
+    if ((e.target as HTMLElement).closest('[data-menu-trigger="true"]')) {
+      e.preventDefault();
+    }
+    setIsOpen(false);
+  };
+
   const navigationLinks = (className = "") => (
     <div className={`flex flex-col items-center space-y-6 ${className}`}>
       <div className="w-full border-b pb-4 text-center">
@@ -17,40 +25,40 @@ const Navigation = () => {
       <Link 
         to="/" 
         className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
-        onClick={() => setIsOpen(false)}
+        onClick={handleLinkClick}
       >
         Home
       </Link>
       <Link 
         to="/about" 
         className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
-        onClick={() => setIsOpen(false)}
+        onClick={handleLinkClick}
       >
         About
       </Link>
       <Link 
         to="/sports" 
         className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
-        onClick={() => setIsOpen(false)}
+        onClick={handleLinkClick}
       >
         Sports
       </Link>
       <Link 
         to="/blog" 
         className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
-        onClick={() => setIsOpen(false)}
+        onClick={handleLinkClick}
       >
         Blog
       </Link>
       <Link 
         to="/contact" 
         className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
-        onClick={() => setIsOpen(false)}
+        onClick={handleLinkClick}
       >
         Contact
       </Link>
       <div className="w-full pt-4 border-t">
-        <Link to="/contact?tab=membership" className="block" onClick={() => setIsOpen(false)}>
+        <Link to="/contact?tab=membership" className="block" onClick={handleLinkClick}>
           <Button variant="default" size="lg" className="w-full">
             Join Now
           </Button>
@@ -95,7 +103,7 @@ const Navigation = () => {
         {isMobile ? (
           <Drawer open={isOpen} onOpenChange={setIsOpen}>
             <DrawerTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" data-menu-trigger="true">
                 <Menu className="h-6 w-6" />
               </Button>
             </DrawerTrigger>
