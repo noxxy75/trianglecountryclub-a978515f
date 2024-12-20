@@ -48,6 +48,13 @@ const Navigation = () => {
         Sports
       </Link>
       <Link 
+        to="/food-beverage" 
+        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        onClick={handleLinkClick}
+      >
+        Food & Beverage
+      </Link>
+      <Link 
         to="/blog" 
         className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
         onClick={handleLinkClick}
@@ -81,6 +88,9 @@ const Navigation = () => {
       </Link>
       <Link to="/sports" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
         Sports
+      </Link>
+      <Link to="/food-beverage" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+        Food & Beverage
       </Link>
       <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
         Blog

@@ -11,6 +11,7 @@ import Sports from "./pages/Sports";
 import Blog from "./pages/Blog";
 import BlogAdmin from "./pages/BlogAdmin";
 import Contact from "./pages/Contact";
+import FoodBeverage from "./pages/FoodBeverage";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/sports" element={<Sports />} />
+              <Route path="/food-beverage" element={<FoodBeverage />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/admin" element={<BlogAdmin />} />
               <Route path="/contact" element={<Contact />} />
