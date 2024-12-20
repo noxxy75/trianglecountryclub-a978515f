@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const Navigation = () => {
   return (
@@ -8,7 +9,7 @@ const Navigation = () => {
           <img src="/lovable-uploads/eb4ff50a-6f12-4589-847b-b1f563e9f9c2.png" alt="Triangle Country Club Logo" className="h-[100px] w-auto" />
           <span className="text-lg font-medium text-foreground">Triangle Country Club</span>
         </Link>
-        <div className="hidden space-x-8 md:flex">
+        <div className="hidden md:flex items-center space-x-8">
           <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Home
           </Link>
@@ -23,6 +24,11 @@ const Navigation = () => {
           </Link>
           <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Contact
+          </Link>
+          <Link to="/contact">
+            <Button variant="default" size="sm">
+              Join Now
+            </Button>
           </Link>
         </div>
       </div>
