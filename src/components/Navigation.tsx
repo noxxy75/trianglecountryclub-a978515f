@@ -68,13 +68,6 @@ const Navigation = () => {
       >
         Contact
       </Link>
-      <div className="w-full pt-4 border-t">
-        <Link to="/contact?tab=membership" className="block" onClick={handleLinkClick}>
-          <Button variant="default" size="lg" className="w-full">
-            Join Now
-          </Button>
-        </Link>
-      </div>
     </div>
   );
 
@@ -97,11 +90,6 @@ const Navigation = () => {
       </Link>
       <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
         Contact
-      </Link>
-      <Link to="/contact?tab=membership">
-        <Button variant="default" size="sm">
-          Join Now
-        </Button>
       </Link>
     </div>
   );
