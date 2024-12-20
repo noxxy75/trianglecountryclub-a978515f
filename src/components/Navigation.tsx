@@ -1,7 +1,37 @@
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
+import { Menu } from "lucide-react";
+import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navigation = () => {
+  const isMobile = useIsMobile();
+
+  const navigationLinks = (className = "") => (
+    <div className={`flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 ${className}`}>
+      <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+        Home
+      </Link>
+      <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+        About
+      </Link>
+      <Link to="/sports" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+        Sports
+      </Link>
+      <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+        Blog
+      </Link>
+      <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+        Contact
+      </Link>
+      <Link to="/contact?tab=membership">
+        <Button variant="default" size="sm">
+          Join Now
+        </Button>
+      </Link>
+    </div>
+  );
+
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 bg-purple-500/20 backdrop-blur-[2px] border-b border-gray-800/10">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3">
@@ -9,28 +39,25 @@ const Navigation = () => {
           <img src="/lovable-uploads/eb4ff50a-6f12-4589-847b-b1f563e9f9c2.png" alt="Triangle Country Club Logo" className="h-[100px] w-auto" />
           <span className="text-lg font-medium text-foreground">Triangle Country Club</span>
         </Link>
-        <div className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            Home
-          </Link>
-          <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            About
-          </Link>
-          <Link to="/sports" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            Sports
-          </Link>
-          <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            Blog
-          </Link>
-          <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            Contact
-          </Link>
-          <Link to="/contact?tab=membership">
-            <Button variant="default" size="sm">
-              Join Now
-            </Button>
-          </Link>
-        </div>
+        
+        {isMobile ? (
+          <Drawer>
+            <DrawerTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </DrawerTrigger>
+            <DrawerContent>
+              <div className="p-6">
+                {navigationLinks("pt-4")}
+              </div>
+            </DrawerContent>
+          </Drawer>
+        ) : (
+          <div className="hidden md:block">
+            {navigationLinks()}
+          </div>
+        )}
       </div>
     </nav>
   );
