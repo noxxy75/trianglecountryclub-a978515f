@@ -25,7 +25,7 @@ const Navigation = () => {
           <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Contact
           </Link>
-          <Link to="/contact">
+          <Link to="/contact?tab=membership">
             <Button variant="default" size="sm">
               Join Now
             </Button>

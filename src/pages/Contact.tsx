@@ -7,9 +7,13 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/components/ui/use-toast";
+import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [searchParams] = useSearchParams();
+  const tabParam = searchParams.get('tab');
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,7 +34,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-sidebar py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <Tabs defaultValue="contact" className="w-full">
+        <Tabs defaultValue={tabParam === 'membership' ? 'membership' : 'contact'} className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="contact">Contact Us</TabsTrigger>
             <TabsTrigger value="membership">Membership Application</TabsTrigger>
