@@ -26,15 +26,15 @@ const MembershipInfo = () => {
               <p className="text-sm text-muted-foreground">Perfect for single players</p>
             </div>
             <div>
-              <h4 className="font-medium">Family - $499/year</h4>
+              <h4 className="font-medium">Family - $75/year</h4>
               <p className="text-sm text-muted-foreground">Includes spouse and children under 18</p>
             </div>
             <div>
-              <h4 className="font-medium">Corporate - $999/year</h4>
+              <h4 className="font-medium">Corporate - $100/year</h4>
               <p className="text-sm text-muted-foreground">For businesses and their employees</p>
             </div>
             <div>
-              <h4 className="font-medium">Student - $149/year</h4>
+              <h4 className="font-medium">Student - $25/year</h4>
               <p className="text-sm text-muted-foreground">Discounted rate with valid student ID</p>
             </div>
           </div>

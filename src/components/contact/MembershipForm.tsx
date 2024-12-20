@@ -14,9 +14,9 @@ interface MembershipFormProps {
 
 const membershipPrices = {
   individual: 60,
-  family: 499,
-  corporate: 999,
-  student: 149
+  family: 75,
+  corporate: 100,
+  student: 25
 };
 
 const MembershipForm = ({ onSubmit }: MembershipFormProps) => {
@@ -93,9 +93,9 @@ const MembershipForm = ({ onSubmit }: MembershipFormProps) => {
             >
               <option value="">Select membership type</option>
               <option value="individual">Individual ($60/year)</option>
-              <option value="family">Family ($499/year)</option>
-              <option value="corporate">Corporate ($999/year)</option>
-              <option value="student">Student ($149/year)</option>
+              <option value="family">Family ($75/year)</option>
+              <option value="corporate">Corporate ($100/year)</option>
+              <option value="student">Student ($25/year)</option>
             </select>
           </div>
           {selectedType && (
