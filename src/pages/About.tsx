@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background py-16">
+    <div className="pt-[120px] min-h-screen bg-background">
       <div className="mx-auto max-w-7xl px-4">
         <h1 className="mb-12 text-center text-4xl font-bold text-foreground">About Triangle Country Club</h1>
         
