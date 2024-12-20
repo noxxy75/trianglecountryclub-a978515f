@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-white">
       {/* Hero Section */}
       <div className="relative h-[600px] bg-[url('https://images.unsplash.com/photo-1487958449943-2429e8be8625')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/30" />
@@ -13,7 +13,7 @@ const Index = () => {
           <div className="px-4">
             <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">Triangle Country Club</h1>
             <p className="mb-8 text-xl text-white/90">Where Luxury Meets Nature</p>
-            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
+            <Button asChild size="lg" className="bg-yellow-600 hover:bg-yellow-700">
               <Link to="/contact">Join Now</Link>
             </Button>
           </div>
@@ -26,28 +26,28 @@ const Index = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Trophy className="mb-4 h-10 w-10 text-green-600" />
+              <Trophy className="mb-4 h-10 w-10 text-yellow-600" />
               <h3 className="mb-2 text-xl font-semibold">World-Class Golf</h3>
               <p className="text-center text-gray-600">Championship courses designed for all skill levels</p>
             </CardContent>
           </Card>
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Trophy className="mb-4 h-10 w-10 text-green-600" />
+              <Trophy className="mb-4 h-10 w-10 text-yellow-600" />
               <h3 className="mb-2 text-xl font-semibold">Sports Excellence</h3>
               <p className="text-center text-gray-600">Premium facilities for tennis, swimming, and more</p>
             </CardContent>
           </Card>
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Calendar className="mb-4 h-10 w-10 text-green-600" />
+              <Calendar className="mb-4 h-10 w-10 text-yellow-600" />
               <h3 className="mb-2 text-xl font-semibold">Events</h3>
               <p className="text-center text-gray-600">Year-round social events and tournaments</p>
             </CardContent>
           </Card>
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Users className="mb-4 h-10 w-10 text-green-600" />
+              <Users className="mb-4 h-10 w-10 text-yellow-600" />
               <h3 className="mb-2 text-xl font-semibold">Community</h3>
               <p className="text-center text-gray-600">A vibrant community of sports enthusiasts</p>
             </CardContent>
