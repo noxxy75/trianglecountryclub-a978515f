@@ -8,13 +8,13 @@ const Sports = () => {
         title: "Mastering Your Golf Swing",
         date: "March 20, 2024",
         content: "Learn the fundamentals of a perfect golf swing from our resident pro. This comprehensive guide covers grip, stance, and follow-through.",
-        image: "https://images.unsplash.com/photo-1472396961693-142e6e269027"
+        image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b"
       },
       {
         title: "Golf Course Maintenance Tips",
         date: "March 15, 2024",
         content: "Discover how our grounds team maintains our championship course in pristine condition year-round.",
-        image: "https://images.unsplash.com/photo-1472396961693-142e6e269027"
+        image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa"
       }
     ],
     tennis: [
@@ -22,13 +22,13 @@ const Sports = () => {
         title: "Tennis Fundamentals",
         date: "March 18, 2024",
         content: "Master the basics of tennis with our comprehensive guide to serves, volleys, and court positioning.",
-        image: "https://images.unsplash.com/photo-1452378174528-3090a4bba7b2"
+        image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0"
       },
       {
         title: "Tennis Tournament Preparation",
         date: "March 12, 2024",
         content: "Get ready for our upcoming tennis tournament with these essential preparation tips.",
-        image: "https://images.unsplash.com/photo-1452378174528-3090a4bba7b2"
+        image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6"
       }
     ],
     swimming: [
@@ -36,13 +36,13 @@ const Sports = () => {
         title: "Swimming Techniques",
         date: "March 16, 2024",
         content: "Improve your swimming technique with tips from our Olympic-trained coaches.",
-        image: "https://images.unsplash.com/photo-1472396961693-142e6e269027"
+        image: "https://images.unsplash.com/photo-1530549387789-4c1017266635"
       },
       {
         title: "Pool Safety Guidelines",
         date: "March 10, 2024",
         content: "Important safety guidelines and protocols for all pool users at Triangle Country Club.",
-        image: "https://images.unsplash.com/photo-1472396961693-142e6e269027"
+        image: "https://images.unsplash.com/photo-1560090995-01632a28895b"
       }
     ],
     fitness: [
@@ -50,13 +50,13 @@ const Sports = () => {
         title: "Strength Training Basics",
         date: "March 14, 2024",
         content: "Learn proper form and technique for essential strength training exercises.",
-        image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d"
+        image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
       },
       {
         title: "Cardio Workout Plans",
         date: "March 8, 2024",
         content: "Effective cardio workout plans for all fitness levels at our state-of-the-art facility.",
-        image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d"
+        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a"
       }
     ]
   };
