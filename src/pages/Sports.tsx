@@ -2,12 +2,71 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Sports = () => {
+  const sportBlogs = {
+    golf: [
+      {
+        title: "Mastering Your Golf Swing",
+        date: "March 20, 2024",
+        content: "Learn the fundamentals of a perfect golf swing from our resident pro. This comprehensive guide covers grip, stance, and follow-through.",
+        image: "https://images.unsplash.com/photo-1472396961693-142e6e269027"
+      },
+      {
+        title: "Golf Course Maintenance Tips",
+        date: "March 15, 2024",
+        content: "Discover how our grounds team maintains our championship course in pristine condition year-round.",
+        image: "https://images.unsplash.com/photo-1472396961693-142e6e269027"
+      }
+    ],
+    tennis: [
+      {
+        title: "Tennis Fundamentals",
+        date: "March 18, 2024",
+        content: "Master the basics of tennis with our comprehensive guide to serves, volleys, and court positioning.",
+        image: "https://images.unsplash.com/photo-1452378174528-3090a4bba7b2"
+      },
+      {
+        title: "Tennis Tournament Preparation",
+        date: "March 12, 2024",
+        content: "Get ready for our upcoming tennis tournament with these essential preparation tips.",
+        image: "https://images.unsplash.com/photo-1452378174528-3090a4bba7b2"
+      }
+    ],
+    swimming: [
+      {
+        title: "Swimming Techniques",
+        date: "March 16, 2024",
+        content: "Improve your swimming technique with tips from our Olympic-trained coaches.",
+        image: "https://images.unsplash.com/photo-1472396961693-142e6e269027"
+      },
+      {
+        title: "Pool Safety Guidelines",
+        date: "March 10, 2024",
+        content: "Important safety guidelines and protocols for all pool users at Triangle Country Club.",
+        image: "https://images.unsplash.com/photo-1472396961693-142e6e269027"
+      }
+    ],
+    fitness: [
+      {
+        title: "Strength Training Basics",
+        date: "March 14, 2024",
+        content: "Learn proper form and technique for essential strength training exercises.",
+        image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d"
+      },
+      {
+        title: "Cardio Workout Plans",
+        date: "March 8, 2024",
+        content: "Effective cardio workout plans for all fitness levels at our state-of-the-art facility.",
+        image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white py-16">
       <div className="mx-auto max-w-7xl px-4">
         <h1 className="mb-12 text-center text-4xl font-bold text-gray-900">Sports & Activities</h1>
 
-        <Tabs defaultValue="golf" className="mx-auto max-w-3xl">
+        <Tabs defaultValue="golf" className="mx-auto max-w-5xl">
           <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="golf">Golf</TabsTrigger>
             <TabsTrigger value="tennis">Tennis</TabsTrigger>
@@ -15,59 +74,46 @@ const Sports = () => {
             <TabsTrigger value="fitness">Fitness</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="golf">
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <img
-                  src="https://images.unsplash.com/photo-1472396961693-142e6e269027"
-                  alt="Golf course"
-                  className="mb-6 h-64 w-full rounded-lg object-cover"
-                />
-                <h2 className="mb-4 text-2xl font-semibold">Championship Golf</h2>
-                <p className="text-gray-600">
-                  Experience golf at its finest on our meticulously maintained 18-hole championship course. With challenging
-                  holes and stunning landscapes, our course offers an unforgettable golfing experience for players of all
-                  skill levels.
-                </p>
-              </CardContent>
-            </Card>
-          </TabsContent>
+          {Object.entries(sportBlogs).map(([sport, blogs]) => (
+            <TabsContent key={sport} value={sport}>
+              <Card className="border-none shadow-lg">
+                <CardContent className="p-6">
+                  <img
+                    src={blogs[0].image}
+                    alt={`${sport} facility`}
+                    className="mb-6 h-64 w-full rounded-lg object-cover"
+                  />
+                  <h2 className="mb-4 text-2xl font-semibold capitalize">{sport}</h2>
+                  <p className="mb-8 text-gray-600">
+                    {sport === "golf" && "Experience golf at its finest on our meticulously maintained 18-hole championship course."}
+                    {sport === "tennis" && "Our state-of-the-art tennis facilities include both indoor and outdoor courts."}
+                    {sport === "swimming" && "Dive into our Olympic-sized pool or relax by the leisure pool."}
+                    {sport === "fitness" && "Our modern fitness center features the latest equipment and personal training services."}
+                  </p>
 
-          <TabsContent value="tennis">
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <h2 className="mb-4 text-2xl font-semibold">Tennis Courts</h2>
-                <p className="text-gray-600">
-                  Our state-of-the-art tennis facilities include both indoor and outdoor courts, professional coaching, and
-                  regular tournaments for all ages and skill levels.
-                </p>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="swimming">
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <h2 className="mb-4 text-2xl font-semibold">Swimming Complex</h2>
-                <p className="text-gray-600">
-                  Dive into our Olympic-sized pool or relax by the leisure pool. We offer swimming lessons, aqua fitness
-                  classes, and a dedicated children's pool.
-                </p>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="fitness">
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <h2 className="mb-4 text-2xl font-semibold">Fitness Center</h2>
-                <p className="text-gray-600">
-                  Our modern fitness center features the latest equipment, personal training services, and a variety of group
-                  fitness classes to help you achieve your wellness goals.
-                </p>
-              </CardContent>
-            </Card>
-          </TabsContent>
+                  <div className="mt-8">
+                    <h3 className="mb-6 text-xl font-semibold">Latest Articles</h3>
+                    <div className="grid gap-6 md:grid-cols-2">
+                      {blogs.map((blog, index) => (
+                        <Card key={index} className="overflow-hidden">
+                          <img
+                            src={blog.image}
+                            alt={blog.title}
+                            className="h-48 w-full object-cover"
+                          />
+                          <CardContent className="p-4">
+                            <h4 className="mb-2 text-lg font-semibold">{blog.title}</h4>
+                            <p className="mb-2 text-sm text-gray-500">{blog.date}</p>
+                            <p className="text-sm text-gray-600">{blog.content}</p>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          ))}
         </Tabs>
       </div>
     </div>
