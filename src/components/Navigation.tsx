@@ -5,27 +5,27 @@ const Navigation = () => {
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between p-4">
-        <Link to="/" className="text-xl font-bold text-green-600">
+        <Link to="/" className="text-xl font-bold text-yellow-600">
           Triangle Country Club
         </Link>
         <div className="hidden space-x-6 md:flex">
-          <Link to="/" className="text-gray-600 hover:text-green-600">
+          <Link to="/" className="text-gray-600 hover:text-yellow-600">
             Home
           </Link>
-          <Link to="/about" className="text-gray-600 hover:text-green-600">
+          <Link to="/about" className="text-gray-600 hover:text-yellow-600">
             About
           </Link>
-          <Link to="/sports" className="text-gray-600 hover:text-green-600">
+          <Link to="/sports" className="text-gray-600 hover:text-yellow-600">
             Sports
           </Link>
-          <Link to="/blog" className="text-gray-600 hover:text-green-600">
+          <Link to="/blog" className="text-gray-600 hover:text-yellow-600">
             Blog
           </Link>
-          <Link to="/contact" className="text-gray-600 hover:text-green-600">
+          <Link to="/contact" className="text-gray-600 hover:text-yellow-600">
             Contact
           </Link>
         </div>
-        <Button asChild className="bg-green-600 hover:bg-green-700">
+        <Button asChild className="bg-yellow-600 hover:bg-yellow-700">
           <Link to="/contact">Join Now</Link>
         </Button>
       </div>
