@@ -1,4 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const posts = [
@@ -25,7 +27,12 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <h1 className="mb-12 text-center text-4xl font-bold text-gray-900">Club News & Updates</h1>
+        <div className="mb-12 flex items-center justify-between">
+          <h1 className="text-4xl font-bold text-gray-900">Club News & Updates</h1>
+          <Button asChild className="bg-green-600 hover:bg-green-700">
+            <Link to="/blog/admin">Manage Blog</Link>
+          </Button>
+        </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
