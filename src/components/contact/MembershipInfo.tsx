@@ -22,19 +22,19 @@ const MembershipInfo = () => {
           <h3 className="text-xl font-semibold mb-4">Membership Types</h3>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium">Individual</h4>
+              <h4 className="font-medium">Individual - $299/year</h4>
               <p className="text-sm text-muted-foreground">Perfect for single players</p>
             </div>
             <div>
-              <h4 className="font-medium">Family</h4>
+              <h4 className="font-medium">Family - $499/year</h4>
               <p className="text-sm text-muted-foreground">Includes spouse and children under 18</p>
             </div>
             <div>
-              <h4 className="font-medium">Corporate</h4>
+              <h4 className="font-medium">Corporate - $999/year</h4>
               <p className="text-sm text-muted-foreground">For businesses and their employees</p>
             </div>
             <div>
-              <h4 className="font-medium">Student</h4>
+              <h4 className="font-medium">Student - $149/year</h4>
               <p className="text-sm text-muted-foreground">Discounted rate with valid student ID</p>
             </div>
           </div>
