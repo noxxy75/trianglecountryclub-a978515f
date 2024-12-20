@@ -1,3 +1,5 @@
+import { Card, CardContent } from "@/components/ui/card";
+
 const About = () => {
   return (
     <div className="min-h-screen bg-background py-16">
