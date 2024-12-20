@@ -62,29 +62,29 @@ const Sports = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white py-16">
+    <div className="min-h-screen bg-black py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <h1 className="mb-12 text-center text-4xl font-bold text-gray-900">Sports & Activities</h1>
+        <h1 className="mb-12 text-center text-4xl font-bold text-white">Sports & Activities</h1>
 
         <Tabs defaultValue="golf" className="mx-auto max-w-5xl">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="golf">Golf</TabsTrigger>
-            <TabsTrigger value="tennis">Tennis</TabsTrigger>
-            <TabsTrigger value="swimming">Swimming</TabsTrigger>
-            <TabsTrigger value="fitness">Fitness</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-4 bg-gray-900">
+            <TabsTrigger value="golf" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Golf</TabsTrigger>
+            <TabsTrigger value="tennis" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Tennis</TabsTrigger>
+            <TabsTrigger value="swimming" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Swimming</TabsTrigger>
+            <TabsTrigger value="fitness" className="text-gray-300 data-[state=active]:bg-gray-800 data-[state=active]:text-white">Fitness</TabsTrigger>
           </TabsList>
 
           {Object.entries(sportBlogs).map(([sport, blogs]) => (
             <TabsContent key={sport} value={sport}>
-              <Card className="border-none shadow-lg">
+              <Card className="border-none bg-gray-900 shadow-xl">
                 <CardContent className="p-6">
                   <img
                     src={blogs[0].image}
                     alt={`${sport} facility`}
                     className="mb-6 h-64 w-full rounded-lg object-cover"
                   />
-                  <h2 className="mb-4 text-2xl font-semibold capitalize">{sport}</h2>
-                  <p className="mb-8 text-gray-600">
+                  <h2 className="mb-4 text-2xl font-semibold text-white capitalize">{sport}</h2>
+                  <p className="mb-8 text-gray-300">
                     {sport === "golf" && "Experience golf at its finest on our meticulously maintained 18-hole championship course."}
                     {sport === "tennis" && "Our state-of-the-art tennis facilities include both indoor and outdoor courts."}
                     {sport === "swimming" && "Dive into our Olympic-sized pool or relax by the leisure pool."}
@@ -92,19 +92,19 @@ const Sports = () => {
                   </p>
 
                   <div className="mt-8">
-                    <h3 className="mb-6 text-xl font-semibold">Latest Articles</h3>
+                    <h3 className="mb-6 text-xl font-semibold text-white">Latest Articles</h3>
                     <div className="grid gap-6 md:grid-cols-2">
                       {blogs.map((blog, index) => (
-                        <Card key={index} className="overflow-hidden">
+                        <Card key={index} className="overflow-hidden bg-gray-800 border-gray-700">
                           <img
                             src={blog.image}
                             alt={blog.title}
                             className="h-48 w-full object-cover"
                           />
                           <CardContent className="p-4">
-                            <h4 className="mb-2 text-lg font-semibold">{blog.title}</h4>
-                            <p className="mb-2 text-sm text-gray-500">{blog.date}</p>
-                            <p className="text-sm text-gray-600">{blog.content}</p>
+                            <h4 className="mb-2 text-lg font-semibold text-white">{blog.title}</h4>
+                            <p className="mb-2 text-sm text-gray-400">{blog.date}</p>
+                            <p className="text-sm text-gray-300">{blog.content}</p>
                           </CardContent>
                         </Card>
                       ))}
