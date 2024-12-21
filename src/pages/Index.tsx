@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Trophy, Calendar, Users } from "lucide-react";
+import { Trophy, Calendar, Users, ArrowRight, Tennis, Golf, Swimming } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -13,8 +13,11 @@ const Index = () => {
           <div className="px-4">
             <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">Triangle Country Club</h1>
             <p className="mb-8 text-xl text-white/90">Where Luxury Meets Nature</p>
-            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
-              <Link to="/contact">Join Now</Link>
+            <Button asChild size="lg" className="bg-[#FEF7CD] hover:bg-[#FEF7CD]/90 text-black gap-2">
+              <Link to="/contact">
+                Join Now
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>
@@ -26,28 +29,28 @@ const Index = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Trophy className="mb-4 h-10 w-10 text-green-600" />
+              <Golf className="mb-4 h-10 w-10 text-[#FEF7CD]" />
               <h3 className="mb-2 text-xl font-semibold">World-Class Golf</h3>
               <p className="text-center text-gray-600">Championship courses designed for all skill levels</p>
             </CardContent>
           </Card>
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Trophy className="mb-4 h-10 w-10 text-green-600" />
+              <Tennis className="mb-4 h-10 w-10 text-[#FEF7CD]" />
               <h3 className="mb-2 text-xl font-semibold">Sports Excellence</h3>
               <p className="text-center text-gray-600">Premium facilities for tennis, swimming, and more</p>
             </CardContent>
           </Card>
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Calendar className="mb-4 h-10 w-10 text-green-600" />
+              <Calendar className="mb-4 h-10 w-10 text-[#FEF7CD]" />
               <h3 className="mb-2 text-xl font-semibold">Events</h3>
               <p className="text-center text-gray-600">Year-round social events and tournaments</p>
             </CardContent>
           </Card>
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Users className="mb-4 h-10 w-10 text-green-600" />
+              <Swimming className="mb-4 h-10 w-10 text-[#FEF7CD]" />
               <h3 className="mb-2 text-xl font-semibold">Community</h3>
               <p className="text-center text-gray-600">A vibrant community of sports enthusiasts</p>
             </CardContent>
