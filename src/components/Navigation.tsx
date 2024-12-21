@@ -52,7 +52,7 @@ const Navigation = () => {
         className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
         onClick={handleLinkClick}
       >
-        Food & Beverage
+        F&B
       </Link>
       <Link 
         to="/blog" 
@@ -83,7 +83,7 @@ const Navigation = () => {
         Sports
       </Link>
       <Link to="/food-beverage" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
-        Food & Beverage
+        F&B
       </Link>
       <Link to="/blog" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
         Blog
