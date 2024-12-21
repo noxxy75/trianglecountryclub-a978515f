@@ -9,13 +9,13 @@ const FoodBeverage = () => {
         title: "Main Dining Room",
         description: "Experience fine dining with panoramic golf course views",
         hours: "Lunch: 11:30 AM - 2:30 PM\nDinner: 5:30 PM - 10:00 PM",
-        image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9"
+        image: "/lovable-uploads/eecd94d8-49bc-4c8a-8df2-9aa63f03f711.png"
       },
       {
         title: "Special Events",
         description: "Custom catering and private dining rooms available",
         hours: "By Reservation",
-        image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0"
+        image: "/lovable-uploads/a6394d68-0f20-4a6f-bca2-88f6ed2ed400.png"
       }
     ],
     bar: [
@@ -23,13 +23,13 @@ const FoodBeverage = () => {
         title: "19th Hole Bar",
         description: "Casual drinks and light fare with fellow members",
         hours: "11:00 AM - 11:00 PM",
-        image: "https://images.unsplash.com/photo-1543007630-9710e4a00a20"
+        image: "/lovable-uploads/ef660ea6-2104-4ae6-b3a5-b4acf4a1a6f1.png"
       },
       {
         title: "Wine Cellar",
         description: "Extensive wine collection and tasting events",
         hours: "5:00 PM - 10:00 PM",
-        image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3"
+        image: "/lovable-uploads/f02ed9e7-1d08-4ddb-a8c4-6d9ad88fdaba.png"
       }
     ],
     cafe: [
@@ -37,13 +37,13 @@ const FoodBeverage = () => {
         title: "Poolside Café",
         description: "Quick bites and refreshments by the pool",
         hours: "9:00 AM - 6:00 PM (Seasonal)",
-        image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288"
+        image: "/lovable-uploads/eecd94d8-49bc-4c8a-8df2-9aa63f03f711.png"
       },
       {
         title: "Golf Course Snack Bar",
         description: "Convenient refreshments during your round",
         hours: "7:00 AM - Sunset",
-        image: "https://images.unsplash.com/photo-1513104890138-7c749659a591"
+        image: "/lovable-uploads/f02ed9e7-1d08-4ddb-a8c4-6d9ad88fdaba.png"
       }
     ]
   };
