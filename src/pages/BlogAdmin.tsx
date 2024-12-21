@@ -45,16 +45,16 @@ const BlogAdmin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen bg-background py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <h1 className="mb-8 text-3xl font-bold text-gray-900">Sports Blog Administration</h1>
+        <h1 className="mb-8 text-3xl font-bold text-foreground">Sports Blog Administration</h1>
 
-        <div className="mb-12 rounded-lg bg-white p-6 shadow-md">
-          <h2 className="mb-6 text-xl font-semibold text-gray-900">Create New Post</h2>
+        <div className="mb-12 rounded-lg bg-card p-6 shadow-md border border-border">
+          <h2 className="mb-6 text-xl font-semibold text-card-foreground">Create New Post</h2>
           <BlogPostForm onSubmit={handleCreatePost} />
         </div>
 
-        <div className="rounded-lg bg-white p-6 shadow-md">
+        <div className="rounded-lg bg-card p-6 shadow-md border border-border">
           <BlogPostsTable
             posts={posts}
             onDelete={handleDeletePost}

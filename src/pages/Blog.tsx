@@ -25,25 +25,25 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen bg-background py-16">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-12 flex items-center justify-between">
-          <h1 className="text-4xl font-bold text-gray-900">Club News & Updates</h1>
-          <Button asChild className="bg-green-600 hover:bg-green-700">
+          <h1 className="text-4xl font-bold text-foreground">Club News & Updates</h1>
+          <Button asChild className="bg-primary hover:bg-primary/90">
             <Link to="/blog/admin">Manage Blog</Link>
           </Button>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
-            <Card key={index} className="overflow-hidden border-none shadow-lg">
+            <Card key={index} className="overflow-hidden border-border bg-card">
               <img src={post.image} alt={post.title} className="h-48 w-full object-cover" />
               <CardHeader>
-                <CardTitle>{post.title}</CardTitle>
-                <p className="text-sm text-gray-500">{post.date}</p>
+                <CardTitle className="text-card-foreground">{post.title}</CardTitle>
+                <p className="text-sm text-muted-foreground">{post.date}</p>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">{post.excerpt}</p>
+                <p className="text-card-foreground/80">{post.excerpt}</p>
               </CardContent>
             </Card>
           ))}
