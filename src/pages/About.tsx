@@ -10,8 +10,8 @@ const About = () => {
         <div className="mb-16 grid gap-8 md:grid-cols-2">
           <div>
             <img
-              src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb"
-              alt="Lowveld landscape"
+              src="/lovable-uploads/6e4525c2-81e6-453d-b8aa-15849c11f26b.png"
+              alt="Triangle Country Club Entrance"
               className="h-full w-full rounded-lg object-cover"
             />
           </div>
@@ -69,18 +69,18 @@ const About = () => {
         {/* Image Gallery */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <img
-            src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3"
-            alt="Golf course"
+            src="/lovable-uploads/72311812-79ba-4b7e-99f5-ef9edc6a15ee.png"
+            alt="Club Bar Area"
             className="h-64 w-full rounded-lg object-cover"
           />
           <img
-            src="https://images.unsplash.com/photo-1426604966848-d7adac402bff"
-            alt="Tennis courts"
+            src="/lovable-uploads/4fbcf926-3df5-469e-8f4b-44e9180d359e.png"
+            alt="Restaurant Area"
             className="h-64 w-full rounded-lg object-cover"
           />
           <img
-            src="https://images.unsplash.com/photo-1501854140801-50d01698950b"
-            alt="Swimming pool"
+            src="/lovable-uploads/6e4525c2-81e6-453d-b8aa-15849c11f26b.png"
+            alt="Club Entrance"
             className="h-64 w-full rounded-lg object-cover hidden lg:block"
           />
         </div>
