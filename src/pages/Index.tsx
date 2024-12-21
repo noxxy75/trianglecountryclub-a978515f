@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Trophy, Calendar, Users, ArrowRight, Dumbbell } from "lucide-react";
+import { Trophy, Calendar, Users, ArrowRight, Dumbbell, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -64,6 +64,45 @@ const Index = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Location Section */}
+      <section className="py-16 px-4 bg-card">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Our Location</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Located in the heart of Triangle, Zimbabwe, our club offers easy access and ample parking for members and guests.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <MapPin className="h-6 w-6 text-primary mt-1" />
+                <div>
+                  <h3 className="font-semibold mb-2">Address</h3>
+                  <p className="text-muted-foreground">Ross Armstrong Way</p>
+                  <p className="text-muted-foreground">Triangle</p>
+                  <p className="text-muted-foreground">Zimbabwe</p>
+                </div>
+              </div>
+              <div>
+                <Link to="/contact">
+                  <Button className="bg-primary hover:bg-primary/90">
+                    Get Directions <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="relative h-[300px] rounded-lg overflow-hidden">
+              <img 
+                src="/lovable-uploads/175ab89d-d271-4c17-adeb-cfd97c26c7dc.png" 
+                alt="Triangle Country Club Location" 
+                className="object-cover w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </section>
