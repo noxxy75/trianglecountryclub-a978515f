@@ -15,22 +15,22 @@ const ContactForm = ({ onSubmit }: ContactFormProps) => {
         <form onSubmit={onSubmit} className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="Your name" required />
+            <Input id="name" placeholder="Your name" required className="text-center" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="Your email" required />
+            <Input id="email" type="email" placeholder="Your email" required className="text-center" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="subject">Subject</Label>
-            <Input id="subject" placeholder="Message subject" required />
+            <Input id="subject" placeholder="Message subject" required className="text-center" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
               placeholder="Your message"
-              className="min-h-[150px]"
+              className="min-h-[150px] text-center"
               required
             />
           </div>
