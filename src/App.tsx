@@ -22,17 +22,22 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Navigation />
-          <div className="pt-16">
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/sports" element={<Sports />} />
-              <Route path="/food-beverage" element={<FoodBeverage />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/admin" element={<BlogAdmin />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
+          <div className="min-h-screen flex flex-col">
+            <Navigation />
+            <div className="pt-16 flex-grow">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/sports" element={<Sports />} />
+                <Route path="/food-beverage" element={<FoodBeverage />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/admin" element={<BlogAdmin />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </div>
+            <footer className="text-center text-sm text-muted-foreground py-4">
+              Copyright 2024, powered by Intellcore Technology
+            </footer>
           </div>
         </BrowserRouter>
       </TooltipProvider>
