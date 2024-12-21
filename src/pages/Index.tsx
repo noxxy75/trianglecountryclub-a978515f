@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Trophy, Calendar, Users, ArrowRight, Tennis, Golf, Swimming } from "lucide-react";
+import { Trophy, Calendar, Users, ArrowRight, Dumbbell, GolfBall } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -29,14 +29,14 @@ const Index = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Golf className="mb-4 h-10 w-10 text-[#FEF7CD]" />
+              <GolfBall className="mb-4 h-10 w-10 text-[#FEF7CD]" />
               <h3 className="mb-2 text-xl font-semibold">World-Class Golf</h3>
               <p className="text-center text-gray-600">Championship courses designed for all skill levels</p>
             </CardContent>
           </Card>
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Tennis className="mb-4 h-10 w-10 text-[#FEF7CD]" />
+              <Dumbbell className="mb-4 h-10 w-10 text-[#FEF7CD]" />
               <h3 className="mb-2 text-xl font-semibold">Sports Excellence</h3>
               <p className="text-center text-gray-600">Premium facilities for tennis, swimming, and more</p>
             </CardContent>
@@ -50,7 +50,7 @@ const Index = () => {
           </Card>
           <Card className="border-none shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <Swimming className="mb-4 h-10 w-10 text-[#FEF7CD]" />
+              <Users className="mb-4 h-10 w-10 text-[#FEF7CD]" />
               <h3 className="mb-2 text-xl font-semibold">Community</h3>
               <p className="text-center text-gray-600">A vibrant community of sports enthusiasts</p>
             </CardContent>
