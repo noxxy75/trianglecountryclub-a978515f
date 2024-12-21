@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/components/ui/use-toast";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
 import MembershipForm from "@/components/contact/MembershipForm";
@@ -10,6 +11,12 @@ const Contact = () => {
   const { toast } = useToast();
   const [searchParams] = useSearchParams();
   const tabParam = searchParams.get('tab');
+  const location = useLocation();
+
+  // Effect to handle scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
