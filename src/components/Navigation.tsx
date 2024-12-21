@@ -24,46 +24,46 @@ const Navigation = () => {
   const navigationLinks = (className = "") => (
     <div className={`flex flex-col items-center space-y-6 ${className}`}>
       <div className="w-full border-b pb-4 text-center">
-        <span className="text-xl font-semibold">Menu</span>
+        <span className="text-2xl font-semibold">Menu</span>
       </div>
       <Link 
         to="/" 
-        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
         onClick={handleLinkClick}
       >
         Home
       </Link>
       <Link 
         to="/about" 
-        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
         onClick={handleLinkClick}
       >
         About
       </Link>
       <Link 
         to="/sports" 
-        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
         onClick={handleLinkClick}
       >
         Sports
       </Link>
       <Link 
         to="/food-beverage" 
-        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
         onClick={handleLinkClick}
       >
         Food & Beverage
       </Link>
       <Link 
         to="/blog" 
-        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
         onClick={handleLinkClick}
       >
         Blog
       </Link>
       <Link 
         to="/contact" 
-        className="w-full text-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
         onClick={handleLinkClick}
       >
         Contact
@@ -73,22 +73,22 @@ const Navigation = () => {
 
   const desktopLinks = () => (
     <div className="hidden md:flex items-center space-x-8">
-      <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link to="/" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
         Home
       </Link>
-      <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link to="/about" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
         About
       </Link>
-      <Link to="/sports" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link to="/sports" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
         Sports
       </Link>
-      <Link to="/food-beverage" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link to="/food-beverage" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
         Food & Beverage
       </Link>
-      <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link to="/blog" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
         Blog
       </Link>
-      <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link to="/contact" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
         Contact
       </Link>
     </div>
@@ -99,7 +99,7 @@ const Navigation = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3">
         <Link to="/" className="flex items-center space-x-2">
           <img src="/lovable-uploads/eb4ff50a-6f12-4589-847b-b1f563e9f9c2.png" alt="Triangle Country Club Logo" className="h-[100px] w-auto" />
-          <span className="text-lg font-medium text-foreground">Triangle Country Club</span>
+          <span className="text-2xl font-medium text-foreground">Triangle Country Club</span>
         </Link>
         
         {isMobile ? (
