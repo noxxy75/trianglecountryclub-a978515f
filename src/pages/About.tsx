@@ -2,10 +2,21 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <div className="pt-[120px] min-h-screen bg-background">
-      <div className="mx-auto max-w-7xl px-4">
-        <h1 className="mb-12 text-center text-4xl font-bold text-foreground">About Triangle Country Club</h1>
-        
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <div 
+        className="relative h-[60vh] w-full bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/lovable-uploads/0f153a57-1f65-48b2-ba33-433c16b371ad.png')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-5xl font-bold text-white">About Triangle Country Club</h1>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 py-16">
         {/* History Section */}
         <div className="mb-16 grid gap-8 md:grid-cols-2">
           <div>
