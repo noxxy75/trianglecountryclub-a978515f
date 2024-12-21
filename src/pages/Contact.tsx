@@ -13,7 +13,6 @@ const Contact = () => {
   const tabParam = searchParams.get('tab');
   const location = useLocation();
 
-  // Effect to handle scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -51,13 +50,21 @@ const Contact = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="membership">
+          <TabsContent value="membership" className="flex flex-col items-center">
             <h1 className="mb-12 text-center text-4xl font-bold text-sidebar-foreground">
               Membership Application
             </h1>
-            <div className="grid gap-8 lg:grid-cols-2">
-              <MembershipForm onSubmit={handleMembershipSubmit} />
-              <MembershipInfo />
+            <div className="grid gap-8 lg:grid-cols-2 w-full">
+              <div className="w-full flex justify-center">
+                <div className="w-full max-w-md">
+                  <MembershipForm onSubmit={handleMembershipSubmit} />
+                </div>
+              </div>
+              <div className="w-full flex justify-center">
+                <div className="w-full max-w-md">
+                  <MembershipInfo />
+                </div>
+              </div>
             </div>
           </TabsContent>
         </Tabs>
