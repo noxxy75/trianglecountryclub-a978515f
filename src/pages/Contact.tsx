@@ -69,6 +69,9 @@ const Contact = () => {
           </TabsContent>
         </Tabs>
       </div>
+      <footer className="text-center text-sm text-muted-foreground mt-8">
+        Copyright 2024, powered by Intellcore Technology
+      </footer>
     </div>
   );
 };
