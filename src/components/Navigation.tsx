@@ -3,11 +3,18 @@ import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  // Effect to handle scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const handleLinkClick = (e: React.MouseEvent) => {
     // Prevent default behavior only if it's a menu toggle
@@ -15,10 +22,6 @@ const Navigation = () => {
       e.preventDefault();
     }
     setIsOpen(false);
-    // Scroll to top after a brief delay to ensure navigation has completed
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
   };
 
   const navigationLinks = (className = "") => (
