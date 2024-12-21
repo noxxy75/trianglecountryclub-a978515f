@@ -5,8 +5,8 @@ const MembershipInfo = () => {
     <div className="space-y-6">
       <Card className="border-none shadow-lg bg-background">
         <CardContent className="p-6">
-          <h3 className="text-xl font-semibold mb-4">Membership Benefits</h3>
-          <ul className="space-y-2 text-muted-foreground">
+          <h3 className="text-xl font-semibold mb-4 text-left">Membership Benefits</h3>
+          <ul className="space-y-2 text-muted-foreground text-left">
             <li>• Access to all sporting facilities</li>
             <li>• Professional coaching sessions</li>
             <li>• Member-only events and tournaments</li>
@@ -19,8 +19,8 @@ const MembershipInfo = () => {
 
       <Card className="border-none shadow-lg bg-background">
         <CardContent className="p-6">
-          <h3 className="text-xl font-semibold mb-4">Membership Types</h3>
-          <div className="space-y-4">
+          <h3 className="text-xl font-semibold mb-4 text-left">Membership Types</h3>
+          <div className="space-y-4 text-left">
             <div>
               <h4 className="font-medium">Individual - $60/year</h4>
               <p className="text-sm text-muted-foreground">Perfect for single players</p>
