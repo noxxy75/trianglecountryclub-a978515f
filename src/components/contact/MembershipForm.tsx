@@ -69,7 +69,7 @@ const MembershipForm = ({ onSubmit }: MembershipFormProps) => {
   return (
     <Card className="border-none shadow-lg bg-background">
       <CardContent className="p-6">
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6 text-left">
           <div className="space-y-2">
             <Label htmlFor="fullName">Full Name</Label>
             <Input id="fullName" placeholder="Your full name" required />
