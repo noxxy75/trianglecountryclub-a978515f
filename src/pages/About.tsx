@@ -4,16 +4,7 @@ const About = () => {
   return (
     <div className="pt-[120px] min-h-screen bg-background">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="relative h-[400px] mb-12 rounded-lg overflow-hidden">
-          <img
-            src="/lovable-uploads/6e4525c2-81e6-453d-b8aa-15849c11f26b.png"
-            alt="Triangle Country Club Hero"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-            <h1 className="text-4xl font-bold text-white">About Triangle Country Club</h1>
-          </div>
-        </div>
+        <h1 className="mb-12 text-center text-4xl font-bold text-foreground">About Triangle Country Club</h1>
         
         {/* History Section */}
         <div className="mb-16 grid gap-8 md:grid-cols-2">
