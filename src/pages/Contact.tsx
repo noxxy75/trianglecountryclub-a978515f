@@ -50,7 +50,7 @@ const Contact = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="membership" className="flex flex-col items-center">
+          <TabsContent value="membership" className="flex flex-col items-center text-center">
             <h1 className="mb-12 text-center text-4xl font-bold text-sidebar-foreground">
               Membership Application
             </h1>
