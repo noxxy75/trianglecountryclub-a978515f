@@ -8,13 +8,13 @@ const Sports = () => {
         title: "Mastering Your Golf Swing",
         date: "March 20, 2024",
         content: "Learn the fundamentals of a perfect golf swing from our resident pro. This comprehensive guide covers grip, stance, and follow-through.",
-        image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b"
+        image: "/lovable-uploads/462667f2-1634-4244-8769-84ebeae168c0.png"
       },
       {
         title: "Golf Course Maintenance Tips",
         date: "March 15, 2024",
         content: "Discover how our grounds team maintains our championship course in pristine condition year-round.",
-        image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa"
+        image: "/lovable-uploads/01788374-64a9-4691-b5dc-2f3092c9c329.png"
       }
     ],
     tennis: [
@@ -22,13 +22,13 @@ const Sports = () => {
         title: "Tennis Fundamentals",
         date: "March 18, 2024",
         content: "Master the basics of tennis with our comprehensive guide to serves, volleys, and court positioning.",
-        image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0"
+        image: "/lovable-uploads/3b3afe95-2660-4f9d-8313-cdee62547699.png"
       },
       {
         title: "Tennis Tournament Preparation",
         date: "March 12, 2024",
         content: "Get ready for our upcoming tennis tournament with these essential preparation tips.",
-        image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6"
+        image: "/lovable-uploads/3b3afe95-2660-4f9d-8313-cdee62547699.png"
       }
     ],
     swimming: [
@@ -36,13 +36,13 @@ const Sports = () => {
         title: "Swimming Techniques",
         date: "March 16, 2024",
         content: "Improve your swimming technique with tips from our Olympic-trained coaches.",
-        image: "https://images.unsplash.com/photo-1530549387789-4c1017266635"
+        image: "/lovable-uploads/33041125-7ff3-4571-be6c-f4c4eebdff34.png"
       },
       {
         title: "Pool Safety Guidelines",
         date: "March 10, 2024",
         content: "Important safety guidelines and protocols for all pool users at Triangle Country Club.",
-        image: "https://images.unsplash.com/photo-1560090995-01632a28895b"
+        image: "/lovable-uploads/33041125-7ff3-4571-be6c-f4c4eebdff34.png"
       }
     ],
     fitness: [
@@ -50,13 +50,13 @@ const Sports = () => {
         title: "Strength Training Basics",
         date: "March 14, 2024",
         content: "Learn proper form and technique for essential strength training exercises.",
-        image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+        image: "/lovable-uploads/d13d790f-b914-49c1-86a0-57699b617699.png"
       },
       {
         title: "Cardio Workout Plans",
         date: "March 8, 2024",
         content: "Effective cardio workout plans for all fitness levels at our state-of-the-art facility.",
-        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a"
+        image: "/lovable-uploads/d13d790f-b914-49c1-86a0-57699b617699.png"
       }
     ],
     soccer: [
@@ -64,13 +64,13 @@ const Sports = () => {
         title: "Soccer Training Programs",
         date: "March 19, 2024",
         content: "Join our comprehensive soccer training programs suitable for all skill levels.",
-        image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55"
+        image: "/lovable-uploads/01788374-64a9-4691-b5dc-2f3092c9c329.png"
       },
       {
         title: "Youth Soccer League",
         date: "March 13, 2024",
         content: "Information about our youth soccer league and upcoming tournaments.",
-        image: "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a"
+        image: "/lovable-uploads/01788374-64a9-4691-b5dc-2f3092c9c329.png"
       }
     ],
     gym: [
@@ -78,13 +78,13 @@ const Sports = () => {
         title: "New Equipment Arrival",
         date: "March 17, 2024",
         content: "Check out our newly arrived state-of-the-art gym equipment for a better workout experience.",
-        image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+        image: "/lovable-uploads/d13d790f-b914-49c1-86a0-57699b617699.png"
       },
       {
         title: "Personal Training Sessions",
         date: "March 11, 2024",
         content: "Book your personal training sessions with our certified trainers.",
-        image: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2"
+        image: "/lovable-uploads/d13d790f-b914-49c1-86a0-57699b617699.png"
       }
     ],
     cricket: [
@@ -92,13 +92,13 @@ const Sports = () => {
         title: "Cricket Academy Launch",
         date: "March 15, 2024",
         content: "Join our new cricket academy with professional coaching staff.",
-        image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da"
+        image: "/lovable-uploads/01788374-64a9-4691-b5dc-2f3092c9c329.png"
       },
       {
         title: "Weekend Cricket League",
         date: "March 9, 2024",
         content: "Participate in our weekend cricket league - open for all skill levels.",
-        image: "https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972"
+        image: "/lovable-uploads/01788374-64a9-4691-b5dc-2f3092c9c329.png"
       }
     ]
   };
