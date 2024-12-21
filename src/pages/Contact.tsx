@@ -46,7 +46,22 @@ const Contact = () => {
             <h1 className="mb-12 text-center text-4xl font-bold text-sidebar-foreground">Contact Us</h1>
             <div className="grid gap-8 lg:grid-cols-2">
               <ContactForm onSubmit={handleContactSubmit} />
-              <ContactInfo />
+              <div className="space-y-8">
+                <ContactInfo />
+                <div className="w-full h-[300px] rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.3307673461647!2d31.646661776175437!3d-21.02699884334283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931b1a8b13fffff%3A0x7cc43521f9c6e0c6!2sTriangle%20Country%20Club!5e0!3m2!1sen!2sus!4v1709913031424!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Triangle Country Club Location"
+                    className="rounded-lg"
+                  />
+                </div>
+              </div>
             </div>
           </TabsContent>
 
