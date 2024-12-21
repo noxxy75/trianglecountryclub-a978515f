@@ -98,8 +98,8 @@ const Navigation = () => {
     <nav className="fixed left-0 right-0 top-0 z-50 bg-purple-500/20 backdrop-blur-[2px] border-b border-gray-800/10">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3">
         <Link to="/" className="flex items-center space-x-2">
-          <img src="/lovable-uploads/eb4ff50a-6f12-4589-847b-b1f563e9f9c2.png" alt="Triangle Country Club Logo" className="h-16 w-auto" />
-          <span className="text-lg font-medium text-foreground">Triangle Country Club</span>
+          <img src="/lovable-uploads/eb4ff50a-6f12-4589-847b-b1f563e9f9c2.png" alt="Triangle Country Club Logo" className="h-[100px] w-auto" />
+          <span className="text-2xl font-medium text-foreground">Triangle Country Club</span>
         </Link>
         
         {isMobile ? (

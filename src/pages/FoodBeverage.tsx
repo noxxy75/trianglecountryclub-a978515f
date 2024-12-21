@@ -51,7 +51,7 @@ const FoodBeverage = () => {
   return (
     <div className="min-h-screen bg-[#1A1F2C] py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <h1 className="mb-12 text-center text-4xl font-bold text-white">F&B</h1>
+        <h1 className="mb-12 text-center text-4xl font-bold text-white">Food & Beverage</h1>
 
         <Tabs defaultValue="dining" className="mx-auto max-w-5xl">
           <TabsList className="grid w-full grid-cols-3 bg-purple-500/20 backdrop-blur-sm">
