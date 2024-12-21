@@ -72,21 +72,21 @@ const MembershipForm = ({ onSubmit }: MembershipFormProps) => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="fullName">Full Name</Label>
-            <Input id="fullName" placeholder="Your full name" required className="text-center" />
+            <Input id="fullName" placeholder="Your full name" required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="memberEmail">Email</Label>
-            <Input id="memberEmail" type="email" placeholder="Your email" required className="text-center" />
+            <Input id="memberEmail" type="email" placeholder="Your email" required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="phone">Phone Number</Label>
-            <Input id="phone" type="tel" placeholder="Your phone number" required className="text-center" />
+            <Input id="phone" type="tel" placeholder="Your phone number" required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="membershipType">Membership Type</Label>
             <select 
               id="membershipType" 
-              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-center"
+              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               required
               value={selectedType}
               onChange={handleTypeChange}
@@ -118,7 +118,7 @@ const MembershipForm = ({ onSubmit }: MembershipFormProps) => {
             <Textarea
               id="interests"
               placeholder="Tell us about your sporting interests"
-              className="min-h-[100px] text-center"
+              className="min-h-[100px]"
               required
             />
           </div>
