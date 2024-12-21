@@ -14,7 +14,7 @@ const Index = () => {
             <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">Triangle Country Club</h1>
             <p className="mb-8 text-xl text-white/90">Where Luxury Meets Nature</p>
             <Button asChild size="lg" className="bg-[#FEF7CD] hover:bg-[#FEF7CD]/90 text-black gap-2">
-              <Link to="/contact">
+              <Link to="/contact?tab=membership">
                 Join Now
                 <ArrowRight className="h-5 w-5" />
               </Link>
