@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 
 const Navigation = () => {
   const isMobile = useIsMobile();
@@ -50,6 +51,13 @@ const Navigation = () => {
     setIsOpen(false);
   };
 
+  const isActiveRoute = (path: string) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
+
   const navigationLinks = (className = "") => (
     <div className={`flex flex-col items-center space-y-6 ${className}`}>
       <div className="w-full border-b pb-4 text-center">
@@ -57,42 +65,60 @@ const Navigation = () => {
       </div>
       <Link 
         to="/" 
-        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className={cn(
+          "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
         onClick={handleLinkClick}
       >
         Home
       </Link>
       <Link 
         to="/about" 
-        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className={cn(
+          "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/about') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
         onClick={handleLinkClick}
       >
         About
       </Link>
       <Link 
         to="/sports" 
-        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className={cn(
+          "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/sports') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
         onClick={handleLinkClick}
       >
         Sports
       </Link>
       <Link 
         to="/food-beverage" 
-        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className={cn(
+          "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/food-beverage') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
         onClick={handleLinkClick}
       >
         F&B
       </Link>
       <Link 
         to="/blog" 
-        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className={cn(
+          "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/blog') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
         onClick={handleLinkClick}
       >
         Blog
       </Link>
       <Link 
         to="/contact" 
-        className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className={cn(
+          "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/contact') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
         onClick={handleLinkClick}
       >
         Contact
@@ -101,7 +127,10 @@ const Navigation = () => {
         <>
           <Link 
             to="/blog/admin" 
-            className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className={cn(
+              "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+              isActiveRoute('/blog/admin') && "text-foreground font-semibold border-b-2 border-primary"
+            )}
             onClick={handleLinkClick}
           >
             Blog Admin
@@ -128,27 +157,69 @@ const Navigation = () => {
 
   const desktopLinks = () => (
     <div className="hidden md:flex items-center space-x-8">
-      <Link to="/" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/" 
+        className={cn(
+          "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
+      >
         Home
       </Link>
-      <Link to="/about" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/about" 
+        className={cn(
+          "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/about') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
+      >
         About
       </Link>
-      <Link to="/sports" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/sports" 
+        className={cn(
+          "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/sports') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
+      >
         Sports
       </Link>
-      <Link to="/food-beverage" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/food-beverage" 
+        className={cn(
+          "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/food-beverage') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
+      >
         F&B
       </Link>
-      <Link to="/blog" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/blog" 
+        className={cn(
+          "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/blog') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
+      >
         Blog
       </Link>
-      <Link to="/contact" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+      <Link 
+        to="/contact" 
+        className={cn(
+          "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+          isActiveRoute('/contact') && "text-foreground font-semibold border-b-2 border-primary"
+        )}
+      >
         Contact
       </Link>
       {user ? (
         <>
-          <Link to="/blog/admin" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+          <Link 
+            to="/blog/admin" 
+            className={cn(
+              "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+              isActiveRoute('/blog/admin') && "text-foreground font-semibold border-b-2 border-primary"
+            )}
+          >
             Blog Admin
           </Link>
           <Button 
