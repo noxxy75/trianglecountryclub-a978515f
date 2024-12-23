@@ -4,20 +4,46 @@ import { Menu } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const Navigation = () => {
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const [user, setUser] = useState<any>(null);
 
-  // Effect to handle scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  useEffect(() => {
+    // Check current session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      toast.error("Error signing out");
+    } else {
+      toast.success("Signed out successfully");
+      navigate("/");
+    }
+  };
+
   const handleLinkClick = (e: React.MouseEvent) => {
-    // Prevent default behavior only if it's a menu toggle
     if ((e.target as HTMLElement).closest('[data-menu-trigger="true"]')) {
       e.preventDefault();
     }
@@ -71,6 +97,32 @@ const Navigation = () => {
       >
         Contact
       </Link>
+      {user ? (
+        <>
+          <Link 
+            to="/blog/admin" 
+            className="w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
+            onClick={handleLinkClick}
+          >
+            Blog Admin
+          </Link>
+          <Button 
+            variant="destructive" 
+            onClick={handleSignOut}
+            className="w-full"
+          >
+            Sign Out
+          </Button>
+        </>
+      ) : (
+        <Link 
+          to="/login" 
+          className="w-full text-center"
+          onClick={handleLinkClick}
+        >
+          <Button className="w-full">Sign In</Button>
+        </Link>
+      )}
     </div>
   );
 
@@ -94,6 +146,23 @@ const Navigation = () => {
       <Link to="/contact" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
         Contact
       </Link>
+      {user ? (
+        <>
+          <Link to="/blog/admin" className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors">
+            Blog Admin
+          </Link>
+          <Button 
+            variant="destructive"
+            onClick={handleSignOut}
+          >
+            Sign Out
+          </Button>
+        </>
+      ) : (
+        <Link to="/login">
+          <Button>Sign In</Button>
+        </Link>
+      )}
     </div>
   );
 
