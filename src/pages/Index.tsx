@@ -99,7 +99,7 @@ const Index = () => {
             <div className="relative h-[300px] rounded-lg overflow-hidden">
               <img 
                 src="/lovable-uploads/175ab89d-d271-4c17-adeb-cfd97c26c7dc.png" 
-                alt="Triangle Country Club Location" 
+                alt="Triangle Country Club Location"
                 className="object-cover w-full h-full"
               />
             </div>
