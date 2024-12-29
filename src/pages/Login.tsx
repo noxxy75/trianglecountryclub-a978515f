@@ -3,6 +3,7 @@ import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -10,7 +11,12 @@ const Login = () => {
   useEffect(() => {
     // Check if user is already logged in
     const checkUser = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
+      const { data: { session }, error } = await supabase.auth.getSession();
+      if (error) {
+        console.error("Auth error:", error);
+        toast.error("Authentication error occurred");
+        return;
+      }
       if (session) {
         navigate("/");
       }
@@ -19,8 +25,10 @@ const Login = () => {
     checkUser();
 
     // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      console.log("Auth event:", event);
       if (session) {
+        toast.success("Successfully signed in!");
         navigate("/");
       }
     });
@@ -43,9 +51,20 @@ const Login = () => {
                   brandAccent: '#6d28d9',
                 }
               }
-            }
+            },
+            style: {
+              button: {
+                borderRadius: '0.5rem',
+                padding: '0.75rem 1rem',
+              },
+              input: {
+                borderRadius: '0.5rem',
+                padding: '0.75rem 1rem',
+              },
+            },
           }}
           providers={[]}
+          redirectTo={window.location.origin}
         />
       </div>
     </div>
