@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Calendar, Users, ArrowRight, Dumbbell, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 const Index = () => {
   return (
@@ -125,6 +126,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <ChatWidget />
     </div>
   );
 };
