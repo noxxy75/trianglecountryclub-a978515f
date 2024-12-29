@@ -22,6 +22,8 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const chatMessage: ChatMessage = await req.json();
+    console.log("Received chat message:", chatMessage);
+
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -44,12 +46,14 @@ const handler = async (req: Request): Promise<Response> => {
 
     if (res.ok) {
       const data = await res.json();
+      console.log("Email sent successfully:", data);
       return new Response(JSON.stringify(data), {
         status: 200,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     } else {
       const error = await res.text();
+      console.error("Error from Resend API:", error);
       return new Response(JSON.stringify({ error }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
