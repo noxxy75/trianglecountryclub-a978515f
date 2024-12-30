@@ -9,11 +9,12 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center animate-fade-in"
           style={{ 
             backgroundImage: 'url("/lovable-uploads/175ab89d-d271-4c17-adeb-cfd97c26c7dc.png")',
             backgroundPosition: 'center',
-            backgroundSize: 'cover'
+            backgroundSize: 'cover',
+            animation: 'fade-in 1s ease-out, scale-in 1.2s ease-out'
           }}
         >
           <div className="absolute inset-0 bg-black/50" />
