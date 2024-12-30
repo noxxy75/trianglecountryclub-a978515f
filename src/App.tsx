@@ -76,7 +76,7 @@ const App = () => (
               </Routes>
             </div>
             <footer className="text-center text-sm text-muted-foreground py-4">
-              Copyright 2024, powered by Intellcore Technology
+              Copyright 2024, powered by <a href="https://www.intellcoretech.store" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Intellcore Technology</a>
             </footer>
           </div>
         </BrowserRouter>
