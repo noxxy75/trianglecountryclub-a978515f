@@ -74,27 +74,29 @@ const FoodBeverage = () => {
         <h1 className="mb-12 text-center text-4xl font-bold text-white">Food & Beverage</h1>
 
         <div className="mx-auto max-w-5xl">
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center justify-between w-full md:w-64 px-4 py-2 mb-8 text-white bg-purple-500/20 rounded-lg hover:bg-purple-500/30 transition-colors">
-              <span className="flex items-center">
-                {categoryIcons[selectedCategory as keyof typeof categoryIcons]}
-                {categoryLabels[selectedCategory as keyof typeof categoryLabels]}
-              </span>
-              <ChevronDown className="h-4 w-4 ml-2" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-[200px] bg-[#2A2F3C] border-gray-700">
-              {Object.entries(categoryLabels).map(([key, label]) => (
-                <DropdownMenuItem
-                  key={key}
-                  className="text-white hover:bg-purple-500/20 cursor-pointer flex items-center"
-                  onClick={() => setSelectedCategory(key)}
-                >
-                  {categoryIcons[key as keyof typeof categoryIcons]}
-                  {label}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="flex justify-center mb-8">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center justify-between w-64 px-4 py-2 text-white bg-purple-500/20 rounded-lg hover:bg-purple-500/30 transition-colors">
+                <span className="flex items-center">
+                  {categoryIcons[selectedCategory as keyof typeof categoryIcons]}
+                  {categoryLabels[selectedCategory as keyof typeof categoryLabels]}
+                </span>
+                <ChevronDown className="h-4 w-4 ml-2" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-[200px] bg-[#2A2F3C] border-gray-700">
+                {Object.entries(categoryLabels).map(([key, label]) => (
+                  <DropdownMenuItem
+                    key={key}
+                    className="text-white hover:bg-purple-500/20 cursor-pointer flex items-center"
+                    onClick={() => setSelectedCategory(key)}
+                  >
+                    {categoryIcons[key as keyof typeof categoryIcons]}
+                    {label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
 
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             {menuItems[selectedCategory as keyof typeof menuItems].map((item, index) => (
