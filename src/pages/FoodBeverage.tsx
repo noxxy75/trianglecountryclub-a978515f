@@ -1,8 +1,16 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Coffee, Beer, Pizza, ChevronDown } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Coffee, Beer, Pizza } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useState } from "react";
 
 const FoodBeverage = () => {
+  const [selectedCategory, setSelectedCategory] = useState("dining");
+
   const menuItems = {
     dining: [
       {
@@ -48,53 +56,68 @@ const FoodBeverage = () => {
     ]
   };
 
+  const categoryIcons = {
+    dining: <Pizza className="h-4 w-4 mr-2" />,
+    bar: <Beer className="h-4 w-4 mr-2" />,
+    cafe: <Coffee className="h-4 w-4 mr-2" />
+  };
+
+  const categoryLabels = {
+    dining: "Dining",
+    bar: "Bar & Lounge",
+    cafe: "Café & Snacks"
+  };
+
   return (
     <div className="min-h-screen bg-[#1A1F2C] py-16">
       <div className="mx-auto max-w-7xl px-4">
         <h1 className="mb-12 text-center text-4xl font-bold text-white">Food & Beverage</h1>
 
-        <Tabs defaultValue="dining" className="mx-auto max-w-5xl">
-          <TabsList className="grid w-full grid-cols-3 bg-purple-500/20 backdrop-blur-sm">
-            <TabsTrigger value="dining" className="flex items-center gap-2 text-white">
-              <Pizza className="h-4 w-4" />
-              Dining
-            </TabsTrigger>
-            <TabsTrigger value="bar" className="flex items-center gap-2 text-white">
-              <Beer className="h-4 w-4" />
-              Bar & Lounge
-            </TabsTrigger>
-            <TabsTrigger value="cafe" className="flex items-center gap-2 text-white">
-              <Coffee className="h-4 w-4" />
-              Café & Snacks
-            </TabsTrigger>
-          </TabsList>
+        <div className="mx-auto max-w-5xl">
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center justify-between w-full md:w-64 px-4 py-2 mb-8 text-white bg-purple-500/20 rounded-lg hover:bg-purple-500/30 transition-colors">
+              <span className="flex items-center">
+                {categoryIcons[selectedCategory as keyof typeof categoryIcons]}
+                {categoryLabels[selectedCategory as keyof typeof categoryLabels]}
+              </span>
+              <ChevronDown className="h-4 w-4 ml-2" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-[200px] bg-[#2A2F3C] border-gray-700">
+              {Object.entries(categoryLabels).map(([key, label]) => (
+                <DropdownMenuItem
+                  key={key}
+                  className="text-white hover:bg-purple-500/20 cursor-pointer flex items-center"
+                  onClick={() => setSelectedCategory(key)}
+                >
+                  {categoryIcons[key as keyof typeof categoryIcons]}
+                  {label}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
 
-          {Object.entries(menuItems).map(([category, items]) => (
-            <TabsContent key={category} value={category}>
-              <div className="mt-8 grid gap-8 md:grid-cols-2">
-                {items.map((item, index) => (
-                  <Card key={index} className="overflow-hidden bg-[#222222] border-gray-700">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-48 w-full object-cover"
-                    />
-                    <CardHeader>
-                      <CardTitle className="text-white">{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="mb-4 text-gray-300">{item.description}</p>
-                      <div className="rounded-md bg-[#333333] p-4">
-                        <p className="text-sm font-medium text-white">Hours of Operation</p>
-                        <p className="whitespace-pre-line text-sm text-gray-400">{item.hours}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            {menuItems[selectedCategory as keyof typeof menuItems].map((item, index) => (
+              <Card key={index} className="overflow-hidden bg-[#222222] border-gray-700">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="h-48 w-full object-cover"
+                />
+                <CardHeader>
+                  <CardTitle className="text-white">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="mb-4 text-gray-300">{item.description}</p>
+                  <div className="rounded-md bg-[#333333] p-4">
+                    <p className="text-sm font-medium text-white">Hours of Operation</p>
+                    <p className="whitespace-pre-line text-sm text-gray-400">{item.hours}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
