@@ -42,18 +42,6 @@ const FoodBeverage = () => {
     ],
     cafe: [
       {
-        title: "Poolside Café",
-        description: "Quick bites and refreshments by the pool",
-        hours: "9:00 AM - 6:00 PM (Seasonal)",
-        image: "/lovable-uploads/eecd94d8-49bc-4c8a-8df2-9aa63f03f711.png"
-      },
-      {
-        title: "Golf Course Snack Bar",
-        description: "Convenient refreshments during your round",
-        hours: "7:00 AM - Sunset",
-        image: "/lovable-uploads/f02ed9e7-1d08-4ddb-a8c4-6d9ad88fdaba.png"
-      },
-      {
         title: "Takeaway",
         description: "Fresh meals and snacks prepared for pickup",
         hours: "7:00 AM - 8:00 PM",
