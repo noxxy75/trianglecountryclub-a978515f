@@ -1,4 +1,4 @@
-import { Coffee, Beer, Pizza, ChevronDown } from "lucide-react";
+import { Coffee, Beer, Pizza, ChevronDown, ShoppingBag, Flag } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   DropdownMenu,
@@ -51,6 +51,18 @@ const FoodBeverage = () => {
         title: "Golf Course Snack Bar",
         description: "Convenient refreshments during your round",
         hours: "7:00 AM - Sunset",
+        image: "/lovable-uploads/f02ed9e7-1d08-4ddb-a8c4-6d9ad88fdaba.png"
+      },
+      {
+        title: "Takeaway",
+        description: "Fresh meals and snacks prepared for pickup",
+        hours: "7:00 AM - 8:00 PM",
+        image: "/lovable-uploads/eecd94d8-49bc-4c8a-8df2-9aa63f03f711.png"
+      },
+      {
+        title: "Golf Shack",
+        description: "Quick grab-and-go options at the course",
+        hours: "6:00 AM - 7:00 PM",
         image: "/lovable-uploads/f02ed9e7-1d08-4ddb-a8c4-6d9ad88fdaba.png"
       }
     ]
