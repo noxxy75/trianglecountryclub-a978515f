@@ -1,4 +1,4 @@
-import { Coffee, Beer, Pizza, ChevronDown, ShoppingBag, Flag, GlassWater, Wine, CricketBat } from "lucide-react";
+import { Coffee, Beer, Pizza, ChevronDown, ShoppingBag, Flag, GlassWater, Wine, Trophy } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   DropdownMenu,
