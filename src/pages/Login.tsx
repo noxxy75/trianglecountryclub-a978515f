@@ -9,22 +9,25 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is already logged in
     const checkUser = async () => {
-      const { data: { session }, error } = await supabase.auth.getSession();
-      if (error) {
-        console.error("Auth error:", error);
-        toast.error("Authentication error occurred");
-        return;
-      }
-      if (session) {
-        navigate("/");
+      try {
+        const { data: { session }, error } = await supabase.auth.getSession();
+        if (error) {
+          console.error("Auth error:", error);
+          toast.error("Authentication error occurred");
+          return;
+        }
+        if (session) {
+          navigate("/");
+        }
+      } catch (error) {
+        console.error("Session check error:", error);
+        toast.error("Failed to check authentication status");
       }
     };
     
     checkUser();
 
-    // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       console.log("Auth event:", event);
       if (session) {
