@@ -15,20 +15,44 @@ const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
   useEffect(() => {
-    // Check current session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
       setUser(session?.user ?? null);
-    });
 
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('role')
+          .eq('id', session.user.id)
+          .single();
+        
+        setIsAdmin(profile?.role === 'admin');
+      }
+    };
+
+    checkAuth();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
       setUser(session?.user ?? null);
+      
+      if (session?.user) {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('role')
+          .eq('id', session.user.id)
+          .single();
+        
+        setIsAdmin(profile?.role === 'admin');
+      } else {
+        setIsAdmin(false);
+      }
     });
 
     return () => subscription.unsubscribe();
@@ -125,16 +149,30 @@ const Navigation = () => {
       </Link>
       {user ? (
         <>
-          <Link 
-            to="/blog/admin" 
-            className={cn(
-              "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
-              isActiveRoute('/blog/admin') && "text-foreground font-semibold border-b-2 border-primary"
-            )}
-            onClick={handleLinkClick}
-          >
-            Blog Admin
-          </Link>
+          {isAdmin && (
+            <>
+              <Link 
+                to="/blog/admin" 
+                className={cn(
+                  "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+                  isActiveRoute('/blog/admin') && "text-foreground font-semibold border-b-2 border-primary"
+                )}
+                onClick={handleLinkClick}
+              >
+                Blog Admin
+              </Link>
+              <Link 
+                to="/admin" 
+                className={cn(
+                  "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+                  isActiveRoute('/admin') && "text-foreground font-semibold border-b-2 border-primary"
+                )}
+                onClick={handleLinkClick}
+              >
+                Admin Panel
+              </Link>
+            </>
+          )}
           <Button 
             variant="destructive" 
             onClick={handleSignOut}
@@ -213,15 +251,28 @@ const Navigation = () => {
       </Link>
       {user ? (
         <>
-          <Link 
-            to="/blog/admin" 
-            className={cn(
-              "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
-              isActiveRoute('/blog/admin') && "text-foreground font-semibold border-b-2 border-primary"
-            )}
-          >
-            Blog Admin
-          </Link>
+          {isAdmin && (
+            <>
+              <Link 
+                to="/blog/admin" 
+                className={cn(
+                  "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+                  isActiveRoute('/blog/admin') && "text-foreground font-semibold border-b-2 border-primary"
+                )}
+              >
+                Blog Admin
+              </Link>
+              <Link 
+                to="/admin" 
+                className={cn(
+                  "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+                  isActiveRoute('/admin') && "text-foreground font-semibold border-b-2 border-primary"
+                )}
+              >
+                Admin Panel
+              </Link>
+            </>
+          )}
           <Button 
             variant="destructive"
             onClick={handleSignOut}

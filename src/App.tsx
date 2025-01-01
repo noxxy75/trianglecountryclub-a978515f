@@ -15,6 +15,7 @@ import BlogAdmin from "./pages/BlogAdmin";
 import Contact from "./pages/Contact";
 import FoodBeverage from "./pages/FoodBeverage";
 import Login from "./pages/Login";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,40 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
+const AdminRoute = ({ children }: { children: React.ReactNode }) => {
+  const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const checkAdminStatus = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        setIsAdmin(false);
+        return;
+      }
+
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('role')
+        .eq('id', session.user.id)
+        .single();
+
+      setIsAdmin(profile?.role === 'admin');
+    };
+    
+    checkAdminStatus();
+  }, []);
+
+  if (isAdmin === null) {
+    return <div>Loading...</div>;
+  }
+
+  if (!isAdmin) {
+    return <Navigate to="/" />;
+  }
+
+  return <>{children}</>;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -66,9 +101,17 @@ const App = () => (
                 <Route 
                   path="/blog/admin" 
                   element={
-                    <ProtectedRoute>
+                    <AdminRoute>
                       <BlogAdmin />
-                    </ProtectedRoute>
+                    </AdminRoute>
+                  } 
+                />
+                <Route 
+                  path="/admin" 
+                  element={
+                    <AdminRoute>
+                      <Admin />
+                    </AdminRoute>
                   } 
                 />
                 <Route path="/contact" element={<Contact />} />
