@@ -28,22 +28,22 @@ const FoodBeverage = () => {
     ],
     bar: [
       {
+        title: "The Waterhole",
+        description: "Our signature bar featuring craft cocktails and premium spirits in a sophisticated atmosphere",
+        hours: "2:00 PM - 11:00 PM",
+        image: "/lovable-uploads/72311812-79ba-4b7e-99f5-ef9edc6a15ee.png"
+      },
+      {
         title: "19th Hole Bar",
         description: "Casual drinks and light fare with fellow members",
         hours: "11:00 AM - 11:00 PM",
         image: "/lovable-uploads/72311812-79ba-4b7e-99f5-ef9edc6a15ee.png"
       },
       {
-        title: "Cocktail Bar",
+        title: "Cocktail Lounge",
         description: "Premium cocktails and sophisticated ambiance",
         hours: "5:00 PM - 10:00 PM",
         image: "/lovable-uploads/462667f2-1634-4244-8769-84ebeae168c0.png"
-      },
-      {
-        title: "Water",
-        description: "Refreshing beverages and healthy hydration options",
-        hours: "6:00 AM - 10:00 PM",
-        image: "/lovable-uploads/175ab89d-d271-4c17-adeb-cfd97c26c7dc.png"
       },
       {
         title: "Cricket Pavilion",
