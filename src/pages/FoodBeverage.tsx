@@ -69,9 +69,9 @@ const FoodBeverage = () => {
   };
 
   const categoryIcons = {
-    dining: <Pizza className="h-4 w-4 mr-2" />,
-    bar: <Beer className="h-4 w-4 mr-2" />,
-    cafe: <Coffee className="h-4 w-4 mr-2" />
+    dining: <Pizza className="h-4 w-4 mr-2 text-foreground" />,
+    bar: <Beer className="h-4 w-4 mr-2 text-foreground" />,
+    cafe: <Coffee className="h-4 w-4 mr-2 text-foreground" />
   };
 
   const categoryLabels = {
@@ -88,18 +88,18 @@ const FoodBeverage = () => {
         <div className="mx-auto max-w-5xl">
           <div className="flex justify-center mb-8">
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center justify-between w-64 px-4 py-2 text-foreground bg-primary/20 rounded-lg hover:bg-primary/30 transition-colors">
+              <DropdownMenuTrigger className="flex items-center justify-between w-64 px-4 py-2 text-foreground bg-accent hover:bg-accent/80 rounded-lg transition-colors">
                 <span className="flex items-center">
                   {categoryIcons[selectedCategory as keyof typeof categoryIcons]}
                   {categoryLabels[selectedCategory as keyof typeof categoryLabels]}
                 </span>
-                <ChevronDown className="h-4 w-4 ml-2" />
+                <ChevronDown className="h-4 w-4 ml-2 text-foreground" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-[200px]">
                 {Object.entries(categoryLabels).map(([key, label]) => (
                   <DropdownMenuItem
                     key={key}
-                    className="cursor-pointer flex items-center"
+                    className="cursor-pointer flex items-center text-foreground hover:text-accent-foreground"
                     onClick={() => setSelectedCategory(key)}
                   >
                     {categoryIcons[key as keyof typeof categoryIcons]}
@@ -112,7 +112,7 @@ const FoodBeverage = () => {
 
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             {menuItems[selectedCategory as keyof typeof menuItems].map((item, index) => (
-              <Card key={index} className="overflow-hidden border-border">
+              <Card key={index} className="overflow-hidden border-border bg-card">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -123,7 +123,7 @@ const FoodBeverage = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="mb-4 text-muted-foreground">{item.description}</p>
-                  <div className="rounded-md bg-muted p-4">
+                  <div className="rounded-md bg-muted/50 p-4">
                     <p className="text-sm font-medium text-foreground">Hours of Operation</p>
                     <p className="whitespace-pre-line text-sm text-muted-foreground">{item.hours}</p>
                   </div>
