@@ -1,4 +1,4 @@
-import { Coffee, Beer, Pizza, ChevronDown, ShoppingBag, Flag, GlassWater, Wine, Trophy } from "lucide-react";
+import { Coffee, Beer, Pizza, ChevronDown } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   DropdownMenu,
@@ -81,25 +81,25 @@ const FoodBeverage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1A1F2C] py-16">
+    <div className="min-h-screen bg-background py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <h1 className="mb-12 text-center text-4xl font-bold text-white">Food & Beverage</h1>
+        <h1 className="mb-12 text-center text-4xl font-bold text-foreground">Food & Beverage</h1>
 
         <div className="mx-auto max-w-5xl">
           <div className="flex justify-center mb-8">
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center justify-between w-64 px-4 py-2 text-white bg-purple-500/20 rounded-lg hover:bg-purple-500/30 transition-colors">
+              <DropdownMenuTrigger className="flex items-center justify-between w-64 px-4 py-2 text-foreground bg-primary/20 rounded-lg hover:bg-primary/30 transition-colors">
                 <span className="flex items-center">
                   {categoryIcons[selectedCategory as keyof typeof categoryIcons]}
                   {categoryLabels[selectedCategory as keyof typeof categoryLabels]}
                 </span>
                 <ChevronDown className="h-4 w-4 ml-2" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[200px] bg-[#2A2F3C] border-gray-700">
+              <DropdownMenuContent className="w-[200px]">
                 {Object.entries(categoryLabels).map(([key, label]) => (
                   <DropdownMenuItem
                     key={key}
-                    className="text-white hover:bg-purple-500/20 cursor-pointer flex items-center"
+                    className="cursor-pointer flex items-center"
                     onClick={() => setSelectedCategory(key)}
                   >
                     {categoryIcons[key as keyof typeof categoryIcons]}
@@ -112,20 +112,20 @@ const FoodBeverage = () => {
 
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             {menuItems[selectedCategory as keyof typeof menuItems].map((item, index) => (
-              <Card key={index} className="overflow-hidden bg-[#222222] border-gray-700">
+              <Card key={index} className="overflow-hidden border-border">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="h-48 w-full object-cover"
                 />
                 <CardHeader>
-                  <CardTitle className="text-white">{item.title}</CardTitle>
+                  <CardTitle className="text-foreground">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="mb-4 text-gray-300">{item.description}</p>
-                  <div className="rounded-md bg-[#333333] p-4">
-                    <p className="text-sm font-medium text-white">Hours of Operation</p>
-                    <p className="whitespace-pre-line text-sm text-gray-400">{item.hours}</p>
+                  <p className="mb-4 text-muted-foreground">{item.description}</p>
+                  <div className="rounded-md bg-muted p-4">
+                    <p className="text-sm font-medium text-foreground">Hours of Operation</p>
+                    <p className="whitespace-pre-line text-sm text-muted-foreground">{item.hours}</p>
                   </div>
                 </CardContent>
               </Card>
