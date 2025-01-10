@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { useTheme } from "./theme-provider";
 
 const Navigation = () => {
   const isMobile = useIsMobile();
@@ -16,6 +17,7 @@ const Navigation = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
   const [isAdmin, setIsAdmin] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -190,6 +192,19 @@ const Navigation = () => {
           <Button className="w-full">Sign In</Button>
         </Link>
       )}
+      <Button 
+        variant="ghost" 
+        size="icon"
+        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        className="w-10 h-10"
+      >
+        {theme === "dark" ? (
+          <Sun className="h-5 w-5" />
+        ) : (
+          <Moon className="h-5 w-5" />
+        )}
+        <span className="sr-only">Toggle theme</span>
+      </Button>
     </div>
   );
 
@@ -285,6 +300,19 @@ const Navigation = () => {
           <Button>Sign In</Button>
         </Link>
       )}
+      <Button 
+        variant="ghost" 
+        size="icon"
+        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        className="w-10 h-10"
+      >
+        {theme === "dark" ? (
+          <Sun className="h-5 w-5" />
+        ) : (
+          <Moon className="h-5 w-5" />
+        )}
+        <span className="sr-only">Toggle theme</span>
+      </Button>
     </div>
   );
 
