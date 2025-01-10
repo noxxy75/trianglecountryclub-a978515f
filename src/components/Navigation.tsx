@@ -318,21 +318,21 @@ const Navigation = () => {
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 bg-purple-500/20 backdrop-blur-[2px] border-b border-gray-800/10">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
         <Link to="/" className="flex items-center space-x-2">
-          <img src="/lovable-uploads/eb4ff50a-6f12-4589-847b-b1f563e9f9c2.png" alt="Triangle Country Club Logo" className="h-20 w-auto" />
-          <span className="text-lg font-medium text-foreground">Triangle Country Club</span>
+          <img src="/lovable-uploads/eb4ff50a-6f12-4589-847b-b1f563e9f9c2.png" alt="Triangle Country Club Logo" className="h-12 w-auto" />
+          <span className="text-base font-medium text-foreground">Triangle Country Club</span>
         </Link>
         
         {isMobile ? (
           <Drawer open={isOpen} onOpenChange={setIsOpen}>
             <DrawerTrigger asChild>
-              <Button variant="ghost" size="icon" data-menu-trigger="true">
-                <Menu className="h-6 w-6" />
+              <Button variant="ghost" size="sm" data-menu-trigger="true">
+                <Menu className="h-5 w-5" />
               </Button>
             </DrawerTrigger>
             <DrawerContent>
-              <div className="p-8">
+              <div className="p-6">
                 {navigationLinks("pt-4")}
               </div>
             </DrawerContent>
