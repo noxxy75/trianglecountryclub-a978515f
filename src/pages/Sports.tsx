@@ -124,23 +124,23 @@ const Sports = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background py-16">
+    <div className="min-h-screen bg-black py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <h1 className="mb-12 text-center text-4xl font-bold text-foreground">Sports & Activities</h1>
+        <h1 className="mb-12 text-center text-4xl font-bold text-white">Sports & Activities</h1>
 
         <div className="mx-auto max-w-5xl">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="w-full mb-6">
+              <Button variant="outline" className="w-full mb-6 bg-gray-800 text-white border-gray-700 hover:bg-gray-700">
                 {selectedSport.charAt(0).toUpperCase() + selectedSport.slice(1)}
                 <ChevronDown className="ml-2 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-full min-w-[200px]">
+            <DropdownMenuContent className="w-full min-w-[200px] bg-gray-800 text-white border-gray-700">
               {Object.keys(sportBlogs).map((sport) => (
                 <DropdownMenuItem
                   key={sport}
-                  className="cursor-pointer"
+                  className="hover:bg-gray-700 cursor-pointer"
                   onClick={() => setSelectedSport(sport)}
                 >
                   {sport.charAt(0).toUpperCase() + sport.slice(1)}
@@ -149,32 +149,32 @@ const Sports = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Card className="border-border">
+          <Card className="border-none bg-gray-900 shadow-xl">
             <CardContent className="p-6">
               <img
                 src={sportBlogs[selectedSport][0].image}
                 alt={`${selectedSport} facility`}
                 className="mb-6 h-64 w-full rounded-lg object-cover"
               />
-              <h2 className="mb-4 text-2xl font-semibold text-foreground capitalize">{selectedSport}</h2>
-              <p className="mb-8 text-muted-foreground">
+              <h2 className="mb-4 text-2xl font-semibold text-white capitalize">{selectedSport}</h2>
+              <p className="mb-8 text-gray-300">
                 {sportDescriptions[selectedSport]}
               </p>
 
               <div className="mt-8">
-                <h3 className="mb-6 text-xl font-semibold text-foreground">Latest Articles</h3>
+                <h3 className="mb-6 text-xl font-semibold text-white">Latest Articles</h3>
                 <div className="grid gap-6 md:grid-cols-2">
                   {sportBlogs[selectedSport].map((blog, index) => (
-                    <Card key={index} className="overflow-hidden border-border">
+                    <Card key={index} className="overflow-hidden bg-gray-800 border-gray-700">
                       <img
                         src={blog.image}
                         alt={blog.title}
                         className="h-48 w-full object-cover"
                       />
                       <CardContent className="p-4">
-                        <h4 className="mb-2 text-lg font-semibold text-foreground">{blog.title}</h4>
-                        <p className="mb-2 text-sm text-muted-foreground">{blog.date}</p>
-                        <p className="text-sm text-muted-foreground">{blog.content}</p>
+                        <h4 className="mb-2 text-lg font-semibold text-white">{blog.title}</h4>
+                        <p className="mb-2 text-sm text-gray-400">{blog.date}</p>
+                        <p className="text-sm text-gray-300">{blog.content}</p>
                       </CardContent>
                     </Card>
                   ))}
