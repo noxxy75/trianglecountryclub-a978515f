@@ -47,15 +47,15 @@ const Sports = () => {
     ],
     fitness: [
       {
-        title: "Strength Training Basics",
+        title: "State-of-the-Art Fitness Center",
         date: "March 14, 2024",
-        content: "Learn proper form and technique for essential strength training exercises.",
+        content: "Experience our newly renovated fitness facility featuring premium equipment, dedicated workout zones, and expert trainers ready to guide your fitness journey.",
         image: "/lovable-uploads/8aa14a5c-3463-424b-b611-685485158568.png"
       },
       {
-        title: "Cardio Workout Plans",
+        title: "Group Fitness Classes",
         date: "March 8, 2024",
-        content: "Effective cardio workout plans for all fitness levels at our state-of-the-art facility.",
+        content: "Join our energetic group fitness classes led by certified instructors. From HIIT to yoga, we offer diverse programs for all fitness levels.",
         image: "/lovable-uploads/8aa14a5c-3463-424b-b611-685485158568.png"
       }
     ],
@@ -133,7 +133,7 @@ const Sports = () => {
                     {sport === "golf" && "Experience golf at its finest on our meticulously maintained 18-hole championship course."}
                     {sport === "tennis" && "Our state-of-the-art tennis facilities include both indoor and outdoor courts."}
                     {sport === "swimming" && "Dive into our Olympic-sized pool or relax by the leisure pool."}
-                    {sport === "fitness" && "Our modern fitness center features the latest equipment and personal training services."}
+                    {sport === "fitness" && "Welcome to our premium fitness facility featuring cutting-edge equipment, expert trainers, and diverse group fitness programs designed to help you achieve your wellness goals."}
                     {sport === "soccer" && "Join our soccer programs featuring professional coaching and well-maintained fields."}
                     {sport === "gym" && "State-of-the-art equipment and expert trainers to help you achieve your fitness goals."}
                     {sport === "cricket" && "Experience cricket on our professional grounds with top-notch practice facilities."}
