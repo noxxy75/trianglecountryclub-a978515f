@@ -9,27 +9,33 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is already logged in
     const checkUser = async () => {
-      const { data: { session }, error } = await supabase.auth.getSession();
-      if (error) {
-        console.error("Auth error:", error);
-        toast.error("Authentication error occurred");
-        return;
-      }
-      if (session) {
-        navigate("/");
+      try {
+        const { data: { session }, error } = await supabase.auth.getSession();
+        if (error) {
+          console.error("Auth error:", error);
+          toast.error("Authentication error occurred");
+          return;
+        }
+        if (session) {
+          navigate("/");
+        }
+      } catch (error) {
+        console.error("Session check error:", error);
+        toast.error("Failed to check authentication status");
       }
     };
     
     checkUser();
 
-    // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       console.log("Auth event:", event);
-      if (session) {
+      if (event === 'SIGNED_IN' && session) {
         toast.success("Successfully signed in!");
         navigate("/");
+      }
+      if (event === 'SIGNED_OUT') {
+        toast.success("Successfully signed out!");
       }
     });
 
@@ -37,7 +43,7 @@ const Login = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="w-full max-w-md p-8 space-y-6 bg-card rounded-lg shadow-lg border border-border">
         <h1 className="text-2xl font-bold text-center text-foreground">Welcome to Triangle Country Club</h1>
         <Auth
@@ -60,6 +66,12 @@ const Login = () => {
               input: {
                 borderRadius: '0.5rem',
                 padding: '0.75rem 1rem',
+              },
+              anchor: {
+                color: 'rgb(124 58 237)',
+              },
+              message: {
+                color: 'rgb(239 68 68)',
               },
             },
           }}
