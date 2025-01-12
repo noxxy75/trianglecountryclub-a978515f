@@ -50,13 +50,13 @@ const Sports = () => {
         title: "Strength Training Basics",
         date: "March 14, 2024",
         content: "Learn proper form and technique for essential strength training exercises.",
-        image: "/lovable-uploads/d13d790f-b914-49c1-86a0-57699b617699.png"
+        image: "/lovable-uploads/8aa14a5c-3463-424b-b611-685485158568.png"
       },
       {
         title: "Cardio Workout Plans",
         date: "March 8, 2024",
         content: "Effective cardio workout plans for all fitness levels at our state-of-the-art facility.",
-        image: "/lovable-uploads/d13d790f-b914-49c1-86a0-57699b617699.png"
+        image: "/lovable-uploads/8aa14a5c-3463-424b-b611-685485158568.png"
       }
     ],
     soccer: [
@@ -78,13 +78,13 @@ const Sports = () => {
         title: "New Equipment Arrival",
         date: "March 17, 2024",
         content: "Check out our newly arrived state-of-the-art gym equipment for a better workout experience.",
-        image: "/lovable-uploads/d13d790f-b914-49c1-86a0-57699b617699.png"
+        image: "/lovable-uploads/8aa14a5c-3463-424b-b611-685485158568.png"
       },
       {
         title: "Personal Training Sessions",
         date: "March 11, 2024",
         content: "Book your personal training sessions with our certified trainers.",
-        image: "/lovable-uploads/d13d790f-b914-49c1-86a0-57699b617699.png"
+        image: "/lovable-uploads/8aa14a5c-3463-424b-b611-685485158568.png"
       }
     ],
     cricket: [
