@@ -47,9 +47,9 @@ const Sports = () => {
     ],
     fitness: [
       {
-        title: "State-of-the-Art Fitness Center",
+        title: "Modern Fitness Center",
         date: "March 14, 2024",
-        content: "Experience our newly renovated fitness facility featuring premium equipment, dedicated workout zones, and expert trainers ready to guide your fitness journey.",
+        content: "Experience our well-equipped fitness facility featuring quality equipment, dedicated workout zones, and friendly trainers ready to guide your fitness journey.",
         image: "/lovable-uploads/8aa14a5c-3463-424b-b611-685485158568.png"
       },
       {
@@ -133,7 +133,7 @@ const Sports = () => {
                     {sport === "golf" && "Experience golf at its finest on our meticulously maintained 18-hole championship course."}
                     {sport === "tennis" && "Our state-of-the-art tennis facilities include both indoor and outdoor courts."}
                     {sport === "swimming" && "Dive into our Olympic-sized pool or relax by the leisure pool."}
-                    {sport === "fitness" && "Welcome to our premium fitness facility featuring cutting-edge equipment, expert trainers, and diverse group fitness programs designed to help you achieve your wellness goals."}
+                    {sport === "fitness" && "Welcome to our modern fitness facility featuring quality equipment, experienced trainers, and diverse group fitness programs designed to help you achieve your wellness goals."}
                     {sport === "soccer" && "Join our soccer programs featuring professional coaching and well-maintained fields."}
                     {sport === "gym" && "State-of-the-art equipment and expert trainers to help you achieve your fitness goals."}
                     {sport === "cricket" && "Experience cricket on our professional grounds with top-notch practice facilities."}
