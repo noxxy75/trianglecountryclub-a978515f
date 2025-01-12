@@ -77,7 +77,7 @@ const Sports = () => {
       {
         title: "New Equipment Arrival",
         date: "March 17, 2024",
-        content: "Check out our newly arrived state-of-the-art gym equipment for a better workout experience.",
+        content: "Check out our newly arrived modern gym equipment for a better workout experience.",
         image: "/lovable-uploads/8aa14a5c-3463-424b-b611-685485158568.png"
       },
       {
@@ -135,7 +135,7 @@ const Sports = () => {
                     {sport === "swimming" && "Dive into our Olympic-sized pool or relax by the leisure pool."}
                     {sport === "fitness" && "Welcome to our modern fitness facility featuring quality equipment, experienced trainers, and diverse group fitness programs designed to help you achieve your wellness goals."}
                     {sport === "soccer" && "Join our soccer programs featuring professional coaching and well-maintained fields."}
-                    {sport === "gym" && "State-of-the-art equipment and expert trainers to help you achieve your fitness goals."}
+                    {sport === "gym" && "Quality equipment and experienced trainers to help you achieve your fitness goals."}
                     {sport === "cricket" && "Experience cricket on our professional grounds with top-notch practice facilities."}
                   </p>
 
