@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Sun, Moon } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 const Navigation = () => {
   const isMobile = useIsMobile();
@@ -15,6 +16,7 @@ const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,14 +61,14 @@ const Navigation = () => {
   };
 
   const navigationLinks = (className = "") => (
-    <div className={`flex flex-col items-center space-y-6 ${className}`}>
-      <div className="w-full border-b pb-4 text-center">
-        <span className="text-2xl font-semibold">Menu</span>
+    <div className={`flex flex-col items-center space-y-4 ${className}`}>
+      <div className="w-full border-b pb-3 text-center">
+        <span className="text-xl font-semibold">Menu</span>
       </div>
       <Link 
         to="/" 
         className={cn(
-          "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+          "w-full text-center text-base font-medium text-muted-foreground hover:text-foreground transition-colors",
           isActiveRoute('/') && "text-foreground font-semibold border-b-2 border-primary"
         )}
         onClick={handleLinkClick}
@@ -128,7 +130,7 @@ const Navigation = () => {
           <Link 
             to="/blog/admin" 
             className={cn(
-              "w-full text-center text-xl font-medium text-muted-foreground hover:text-foreground transition-colors",
+              "w-full text-center text-base font-medium text-muted-foreground hover:text-foreground transition-colors",
               isActiveRoute('/blog/admin') && "text-foreground font-semibold border-b-2 border-primary"
             )}
             onClick={handleLinkClick}
@@ -139,6 +141,7 @@ const Navigation = () => {
             variant="destructive" 
             onClick={handleSignOut}
             className="w-full"
+            size="sm"
           >
             Sign Out
           </Button>
@@ -149,18 +152,18 @@ const Navigation = () => {
           className="w-full text-center"
           onClick={handleLinkClick}
         >
-          <Button className="w-full">Sign In</Button>
+          <Button className="w-full" size="sm">Sign In</Button>
         </Link>
       )}
     </div>
   );
 
   const desktopLinks = () => (
-    <div className="hidden md:flex items-center space-x-8">
+    <div className="hidden md:flex items-center space-x-6">
       <Link 
         to="/" 
         className={cn(
-          "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+          "text-base font-medium text-muted-foreground hover:text-foreground transition-colors",
           isActiveRoute('/') && "text-foreground font-semibold border-b-2 border-primary"
         )}
       >
@@ -216,7 +219,7 @@ const Navigation = () => {
           <Link 
             to="/blog/admin" 
             className={cn(
-              "text-lg font-medium text-muted-foreground hover:text-foreground transition-colors",
+              "text-base font-medium text-muted-foreground hover:text-foreground transition-colors",
               isActiveRoute('/blog/admin') && "text-foreground font-semibold border-b-2 border-primary"
             )}
           >
@@ -225,39 +228,66 @@ const Navigation = () => {
           <Button 
             variant="destructive"
             onClick={handleSignOut}
+            size="sm"
           >
             Sign Out
           </Button>
         </>
       ) : (
         <Link to="/login">
-          <Button>Sign In</Button>
+          <Button size="sm">Sign In</Button>
         </Link>
       )}
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        className="h-8 w-8"
+      >
+        {theme === "dark" ? (
+          <Sun className="h-4 w-4" />
+        ) : (
+          <Moon className="h-4 w-4" />
+        )}
+      </Button>
     </div>
   );
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 bg-purple-500/20 backdrop-blur-[2px] border-b border-gray-800/10">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
         <Link to="/" className="flex items-center space-x-2">
-          <img src="/lovable-uploads/eb4ff50a-6f12-4589-847b-b1f563e9f9c2.png" alt="Triangle Country Club Logo" className="h-20 w-auto" />
-          <span className="text-lg font-medium text-foreground">Triangle Country Club</span>
+          <img src="/lovable-uploads/eb4ff50a-6f12-4589-847b-b1f563e9f9c2.png" alt="Triangle Country Club Logo" className="h-12 w-auto" />
+          <span className="text-base font-medium text-foreground">Triangle Country Club</span>
         </Link>
         
         {isMobile ? (
-          <Drawer open={isOpen} onOpenChange={setIsOpen}>
-            <DrawerTrigger asChild>
-              <Button variant="ghost" size="icon" data-menu-trigger="true">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent>
-              <div className="p-8">
-                {navigationLinks("pt-4")}
-              </div>
-            </DrawerContent>
-          </Drawer>
+          <div className="flex items-center space-x-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="h-8 w-8"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
+            </Button>
+            <Drawer open={isOpen} onOpenChange={setIsOpen}>
+              <DrawerTrigger asChild>
+                <Button variant="ghost" size="sm" data-menu-trigger="true">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent>
+                <div className="p-6">
+                  {navigationLinks("pt-4")}
+                </div>
+              </DrawerContent>
+            </Drawer>
+          </div>
         ) : (
           desktopLinks()
         )}
