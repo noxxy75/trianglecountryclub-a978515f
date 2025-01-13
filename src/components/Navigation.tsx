@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
+import { useTheme } from "./theme-provider";
 
 const Navigation = () => {
   const isMobile = useIsMobile();
@@ -155,6 +155,19 @@ const Navigation = () => {
           <Button className="w-full" size="sm">Sign In</Button>
         </Link>
       )}
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        className="h-8 w-8"
+        aria-label="Toggle theme"
+      >
+        {theme === "dark" ? (
+          <Sun className="h-4 w-4" />
+        ) : (
+          <Moon className="h-4 w-4" />
+        )}
+      </Button>
     </div>
   );
 
@@ -243,6 +256,7 @@ const Navigation = () => {
         size="icon"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         className="h-8 w-8"
+        aria-label="Toggle theme"
       >
         {theme === "dark" ? (
           <Sun className="h-4 w-4" />
@@ -254,7 +268,7 @@ const Navigation = () => {
   );
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 bg-purple-500/20 backdrop-blur-[2px] border-b border-gray-800/10">
+    <nav className="fixed left-0 right-0 top-0 z-50 bg-background/20 backdrop-blur-[2px] border-b border-border">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
         <Link to="/" className="flex items-center space-x-2">
           <img src="/lovable-uploads/eb4ff50a-6f12-4589-847b-b1f563e9f9c2.png" alt="Triangle Country Club Logo" className="h-12 w-auto" />
@@ -268,6 +282,7 @@ const Navigation = () => {
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="h-8 w-8"
+              aria-label="Toggle theme"
             >
               {theme === "dark" ? (
                 <Sun className="h-4 w-4" />
