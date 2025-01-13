@@ -49,21 +49,21 @@ const FoodBeverage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1A1F2C] py-16">
+    <div className="min-h-screen bg-background py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <h1 className="mb-12 text-center text-4xl font-bold text-white">Food & Beverage</h1>
+        <h1 className="mb-12 text-center text-4xl font-bold text-foreground">Food & Beverage</h1>
 
         <Tabs defaultValue="dining" className="mx-auto max-w-5xl">
-          <TabsList className="grid w-full grid-cols-3 bg-purple-500/20 backdrop-blur-sm">
-            <TabsTrigger value="dining" className="flex items-center gap-2 text-white">
+          <TabsList className="grid w-full grid-cols-3 bg-muted backdrop-blur-sm">
+            <TabsTrigger value="dining" className="flex items-center gap-2 text-muted-foreground">
               <Pizza className="h-4 w-4" />
               Dining
             </TabsTrigger>
-            <TabsTrigger value="bar" className="flex items-center gap-2 text-white">
+            <TabsTrigger value="bar" className="flex items-center gap-2 text-muted-foreground">
               <Beer className="h-4 w-4" />
               Bar & Lounge
             </TabsTrigger>
-            <TabsTrigger value="cafe" className="flex items-center gap-2 text-white">
+            <TabsTrigger value="cafe" className="flex items-center gap-2 text-muted-foreground">
               <Coffee className="h-4 w-4" />
               Café & Snacks
             </TabsTrigger>
@@ -73,20 +73,20 @@ const FoodBeverage = () => {
             <TabsContent key={category} value={category}>
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 {items.map((item, index) => (
-                  <Card key={index} className="overflow-hidden bg-[#222222] border-gray-700">
+                  <Card key={index} className="overflow-hidden bg-card border-border">
                     <img
                       src={item.image}
                       alt={item.title}
                       className="h-48 w-full object-cover"
                     />
                     <CardHeader>
-                      <CardTitle className="text-white">{item.title}</CardTitle>
+                      <CardTitle className="text-card-foreground">{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="mb-4 text-gray-300">{item.description}</p>
-                      <div className="rounded-md bg-[#333333] p-4">
-                        <p className="text-sm font-medium text-white">Hours of Operation</p>
-                        <p className="whitespace-pre-line text-sm text-gray-400">{item.hours}</p>
+                      <p className="mb-4 text-muted-foreground">{item.description}</p>
+                      <div className="rounded-md bg-muted p-4">
+                        <p className="text-sm font-medium text-card-foreground">Hours of Operation</p>
+                        <p className="whitespace-pre-line text-sm text-muted-foreground">{item.hours}</p>
                       </div>
                     </CardContent>
                   </Card>
