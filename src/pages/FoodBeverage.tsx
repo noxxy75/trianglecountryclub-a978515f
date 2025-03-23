@@ -50,21 +50,30 @@ const FoodBeverage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background py-16">
+    <div className="min-h-screen bg-secondary py-16">
       <div className="mx-auto max-w-7xl px-4">
         <h1 className="mb-12 text-center text-4xl font-bold text-foreground">Food & Beverage</h1>
 
         <Tabs defaultValue="dining" className="mx-auto max-w-5xl">
-          <TabsList className="grid w-full grid-cols-3 bg-muted backdrop-blur-sm">
-            <TabsTrigger value="dining" className="flex items-center gap-2 text-muted-foreground">
+          <TabsList className="grid w-full grid-cols-3 bg-primary text-primary-foreground">
+            <TabsTrigger 
+              value="dining" 
+              className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
               <Pizza className="h-4 w-4" />
               Dining
             </TabsTrigger>
-            <TabsTrigger value="bar" className="flex items-center gap-2 text-muted-foreground">
+            <TabsTrigger 
+              value="bar" 
+              className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
               <Beer className="h-4 w-4" />
               Bar & Lounge
             </TabsTrigger>
-            <TabsTrigger value="cafe" className="flex items-center gap-2 text-muted-foreground">
+            <TabsTrigger 
+              value="cafe" 
+              className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
               <Coffee className="h-4 w-4" />
               Café & Snacks
             </TabsTrigger>
