@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -104,19 +105,54 @@ const Sports = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background py-16">
+    <div className="min-h-screen bg-secondary py-16">
       <div className="mx-auto max-w-7xl px-4">
         <h1 className="mb-12 text-center text-4xl font-bold text-foreground">Sports & Activities</h1>
 
         <Tabs defaultValue="golf" className="mx-auto max-w-5xl">
-          <TabsList className="grid w-full grid-cols-7 bg-muted">
-            <TabsTrigger value="golf" className="text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground">Golf</TabsTrigger>
-            <TabsTrigger value="tennis" className="text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground">Tennis</TabsTrigger>
-            <TabsTrigger value="swimming" className="text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground">Swimming</TabsTrigger>
-            <TabsTrigger value="fitness" className="text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground">Fitness</TabsTrigger>
-            <TabsTrigger value="soccer" className="text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground">Soccer</TabsTrigger>
-            <TabsTrigger value="gym" className="text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground">Gym</TabsTrigger>
-            <TabsTrigger value="cricket" className="text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground">Cricket</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-7 bg-primary text-primary-foreground">
+            <TabsTrigger 
+              value="golf" 
+              className="data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
+              Golf
+            </TabsTrigger>
+            <TabsTrigger 
+              value="tennis" 
+              className="data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
+              Tennis
+            </TabsTrigger>
+            <TabsTrigger 
+              value="swimming" 
+              className="data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
+              Swimming
+            </TabsTrigger>
+            <TabsTrigger 
+              value="fitness" 
+              className="data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
+              Fitness
+            </TabsTrigger>
+            <TabsTrigger 
+              value="soccer" 
+              className="data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
+              Soccer
+            </TabsTrigger>
+            <TabsTrigger 
+              value="gym" 
+              className="data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
+              Gym
+            </TabsTrigger>
+            <TabsTrigger 
+              value="cricket" 
+              className="data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
+              Cricket
+            </TabsTrigger>
           </TabsList>
 
           {Object.entries(sportBlogs).map(([sport, blogs]) => (
