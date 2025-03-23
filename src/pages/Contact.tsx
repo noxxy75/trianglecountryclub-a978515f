@@ -1,3 +1,4 @@
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/components/ui/use-toast";
 import { useSearchParams, useLocation } from "react-router-dom";
@@ -34,16 +35,16 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-sidebar py-16">
+    <div className="min-h-screen bg-secondary py-16">
       <div className="mx-auto max-w-7xl px-4">
         <Tabs defaultValue={tabParam === 'membership' ? 'membership' : 'contact'} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="contact">Contact Us</TabsTrigger>
-            <TabsTrigger value="membership">Membership Application</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-2 mb-8 bg-primary text-primary-foreground">
+            <TabsTrigger value="contact" className="data-[state=active]:bg-white data-[state=active]:text-primary">Contact Us</TabsTrigger>
+            <TabsTrigger value="membership" className="data-[state=active]:bg-white data-[state=active]:text-primary">Membership Application</TabsTrigger>
           </TabsList>
 
           <TabsContent value="contact">
-            <h1 className="mb-12 text-center text-4xl font-bold text-sidebar-foreground">Contact Us</h1>
+            <h1 className="mb-12 text-center text-4xl font-bold text-foreground">Contact Us</h1>
             <div className="grid gap-8 lg:grid-cols-2">
               <ContactForm onSubmit={handleContactSubmit} />
               <div className="space-y-8">
@@ -66,7 +67,7 @@ const Contact = () => {
           </TabsContent>
 
           <TabsContent value="membership" className="flex flex-col items-center text-center">
-            <h1 className="mb-12 text-center text-4xl font-bold text-sidebar-foreground">
+            <h1 className="mb-12 text-center text-4xl font-bold text-foreground">
               Membership Application
             </h1>
             <div className="grid gap-8 lg:grid-cols-2 w-full">
