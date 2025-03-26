@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Calendar, Users, ArrowRight, Dumbbell, MapPin } from "lucide-react";
@@ -85,8 +86,8 @@ const Index = () => {
                 <div>
                   <h3 className="font-semibold mb-2">Address</h3>
                   <p className="text-muted-foreground">Triangle Country Club</p>
-                  <p className="text-muted-foreground">XC9X+F2R</p>
-                  <p className="text-muted-foreground">Triangle, Zimbabwe</p>
+                  <p className="text-muted-foreground">Ross Armstrong Way</p>
+                  <p className="text-muted-foreground">Triangle</p>
                 </div>
               </div>
               <div>

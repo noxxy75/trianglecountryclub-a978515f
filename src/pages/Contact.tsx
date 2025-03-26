@@ -51,7 +51,7 @@ const Contact = () => {
                 <ContactInfo />
                 <div className="w-full h-[300px] rounded-lg overflow-hidden shadow-lg">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d957.0761358056057!2d31.64640761642452!3d-21.027294072387417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931b1aa35cd61d1%3A0x85c4f812d3c3b83f!2sXC9X%2BF2R%2C%20Triangle%2C%20Zimbabwe!5e0!3m2!1sen!2sus!4v1717011285361!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.316897569542!2d31.6468121!3d-21.0273687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931b1a8b1693d3f%3A0x46a18dda7d71b8a0!2sTriangle%20Country%20Club!5e0!3m2!1sen!2sus!4v1659913031424!5m2!1sen!2sus"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
