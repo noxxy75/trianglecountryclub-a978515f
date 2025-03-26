@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Calendar, Users, ArrowRight, Dumbbell, MapPin } from "lucide-react";
@@ -84,9 +85,9 @@ const Index = () => {
                 <MapPin className="h-6 w-6 text-primary mt-1" />
                 <div>
                   <h3 className="font-semibold mb-2">Address</h3>
+                  <p className="text-muted-foreground">Triangle Country Club</p>
                   <p className="text-muted-foreground">Ross Armstrong Way</p>
                   <p className="text-muted-foreground">Triangle</p>
-                  <p className="text-muted-foreground">Zimbabwe</p>
                 </div>
               </div>
               <div>
