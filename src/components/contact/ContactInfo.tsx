@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, MapPin, Phone } from "lucide-react";
 
@@ -11,7 +10,7 @@ const ContactInfo = () => {
             <MapPin className="h-6 w-6 text-primary" />
             <div>
               <h3 className="font-semibold">Address</h3>
-              <p className="text-muted-foreground">Triangle Country Club, Ross Armstrong Way, Triangle</p>
+              <p className="text-muted-foreground">Triangle Country Club, XC9X+F2R, Triangle, Zimbabwe</p>
             </div>
           </div>
         </CardContent>
