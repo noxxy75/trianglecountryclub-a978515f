@@ -67,15 +67,18 @@ const FoodBeverage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-secondary py-16" style={{
-      backgroundImage: "url('/lovable-uploads/baobab-background.png')", 
-      backgroundSize: "contain", 
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      backgroundBlendMode: "soft-light",
-      backgroundAttachment: "fixed",
-      backgroundOpacity: 0.2
-    }}>
+    <div 
+      className="min-h-screen bg-secondary py-16" 
+      style={{
+        backgroundImage: "url('/lovable-uploads/baobab-background.png')", 
+        backgroundSize: "contain", 
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundBlendMode: "soft-light",
+        backgroundAttachment: "fixed",
+        opacity: 0.95 // Using opacity property instead of backgroundOpacity
+      }}
+    >
       <div className="mx-auto max-w-7xl px-4">
         <h1 className="mb-12 text-center text-4xl font-bold text-foreground">Food & Beverage</h1>
 
